@@ -27,6 +27,7 @@
 #' @export
 inventarisation <- function(mode_res="", version="", species="", assembly="", type="") {
 
+
   # from
   # myUrl <- "http://tagc.univ-mrs.fr/remap/download/remapR"
   # myFile <- "remapR.csv"
@@ -38,75 +39,46 @@ inventarisation <- function(mode_res="", version="", species="", assembly="", ty
   # utils::download.file(filePath, file.path(toDir, myFile))
 
   myFrame <- remapR::loadFromUrlToTmp()
+  tmpFrame <- myFrame[myFrame$remap_version == version
+                      & myFrame$species == species
+                      & myFrame$assembly == assembly
+                      & myFrame$data_type == type, ]
+  lenTmpFrame <- nrow(tmpFrame)
+  repFunction <- tmpFrame[, "URL"]
 
   if (mode_res == "") {
-    message("pas de parametres")
-    print("pas de parametres")
-    cat("pas de parametres")
-    print("pas de parametres", quote=FALSE)
-  }
-
-  if (version != "2018" && version != "2015") {
-    message("Invalid version of catalog, choose between 2015 and 2018.")
-    stop()
-  }
-  if (assembly != "hg38" && assembly != "hg19") {
-    message("Invalid assembly, choose between hg19 and hg38.")
-    stop()
-  }
-  size <- "2"
-  if (version == "2015") {
-    size <- "0.5"
-  }
-  url <- "http://tagc.univ-mrs.fr/remap/download/"
-  if (version == "2018" && assembly == "hg38") {
-    url <- paste(url, "MACS/ReMap2_nrPeaks_v1.bed.gz", sep = "")
-  }
-  else if (version == "2018" && assembly == "hg19") {
-    url <- paste(url, "MACS_lifted_hg19/ReMap2_nrPeaks_v1_hg19.bed.gz", sep = "")
-  }
-  else if (version == "2015" && assembly == "hg38") {
-    url <- paste(url, "ReMap1_lifted_hg38/remap1_hg38_nrPeaks.bed.gz", sep = "")
-  }
-  else if (version == "2015" && assembly == "hg19") {
-    url <- paste(url, "remap1/All/nrPeaks_all.bed.gz", sep = "")
-  }
-  if (fileName == "") {
-    splits <- strsplit(url, "/")
-    fileName <- gsub(".gz", "", tail(unlist(splits), n = 1))
-  }
-  filePath <-file.path(targetDir,fileName)
-  fileExists <- file.exists(filePath)
-  input <- "Y"
-  if (!force && !fileExists) {
-    input <- readline(prompt=paste("A ", size, " GB file will be downloaded.
-                                   Do you want to continue Y/N : "))
-    while (input != "Y" && input != "N") {
-      input <- readline(prompt="Please type Y or N and press Enter : ")
+    message("You've choosen $mode_res=''. In this mode you can see the different parametres of using in this function.")
+    message("Parameter $mode_res can be 'path', 'version', 'species', 'assembly' or 'type'")
+    message("If you chose $mode_res='path', you have to determine all others parameters to select file .bed")
+    message("If you chose $mode_res = 'version', 'species', 'assembly' or 'type', you will see the set of your choice")
+    for (i in seq_len(nrow(myFrame))) {
+      print(myFrame[i,1:4])
     }
-  }
-  if (input == "Y") {
-    if (fileExists && !force) {
-      message("The file ", fileName, " already exists. You may want to use
-                    'force = TRUE' to overwrite this file.")
-      if (store) {
-        return(filePath)
-      } else {
-        return(bedToGranges(filePath))
-      }
-    } else {
-      tempZipFile <- paste(tempfile(),".bed.gz", sep = "")
-      utils::download.file(url, tempZipFile)
-      R.utils::gunzip(tempZipFile, filePath, overwrite = force)
-      unlink(tempZipFile)
-      message("A file has been created at ", filePath)
-      if (store) {
-        return(filePath)
-      } else {
-        remapCatalog <- bedToGranges(filePath)
-        unlink(filePath)
-        return(remapCatalog)
-      }
+  } else if (mode_res == "path" & lenTmpFrame == 0) {
+    message("I cannot choose file .bed for this set of parameters")
+  } else if (mode_res == "path" & lenTmpFrame > 1) {
+    message("I've choose more than one file .bed for this set of parameters")
+    for (i in seq_len(nrow(tmpFrame))) {
+      print(tmpFrame[i,1:4])
     }
+  } else if (mode_res != "path"
+             & mode_res != "version"
+             & mode_res != "species"
+             & mode_res != "assembly"
+             & mode_res != "type") {
+    message("Parameter $mode_res can be 'path', 'version', 'species', 'assembly' or 'type'. Type one of them.")
+  } else if (mode_res == "version") {
+    message("All possible variants of version are")
+    print(unique(myFrame$remap_version))
+  } else if (mode_res == "species") {
+    message("All possible variants of species are")
+    print(unique(myFrame$species))
+  } else if (mode_res == "assembly") {
+    message("All possible variants of assembly are")
+    print(unique(myFrame$assembly))
+  } else if (mode_res == "type") {
+    message("All possible variants of type are")
+    print(unique(myFrame$data_type))
   }
-  }
+  return(repFunction)
+}

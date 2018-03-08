@@ -22,7 +22,22 @@ loadFromUrlToTmp <- function(url.in="http://pedagogix-tagc.univ-mrs.fr/remap/dow
   toDir <- path.expand("~/tmp")
   dir.create(toDir, showWarnings=FALSE)
   # download and import
-  utils::download.file(filePath, file.path(toDir, myFile))
+  # message("it is test message")
+
+  fileExists <- file.exists(file.path(toDir, myFile))
+
+  input <- "Y"
+  if (fileExists) {
+    input <- readline(prompt=paste("The file ", myFile, " already exists. Do you want to overwrite this file Y/N : "))
+    while (input != "Y" && input != "N") {
+      input <- readline(prompt="Please type Y or N and press Enter : ")
+    }
+  }
+
+  if (input == "Y"){
+    utils::download.file(filePath, file.path(toDir, myFile))
+  }
+
 
   myFrame <- read.csv(file=file.path(toDir, myFile),
                       colClasses=c("character","character","character","character","character"))
