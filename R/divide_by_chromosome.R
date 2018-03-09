@@ -12,28 +12,31 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-combineRData <- function(dirFrom="", dirTo="") {
+divideByChromosome <- function(dirFrom="", dirTo="") {
 
   if (dirFrom == "") {
-    dirFrom <- path.expand("~/tmp/RData/Input")
+    dirFrom <- path.expand("~/tmp/RData/Output")
   }
-
   if (dirTo == "") {
     dirTo <- path.expand("~/tmp/RData/Output")
   }
+  pathOpen <- file.choose()
+  load(pathOpen)
 
-  totFrame <- data.frame()
-  # i <- "outaa.RData"
-  for (i in grep("RData$", list.files(dirFrom), value = TRUE)) {
+  myChrom <- unique(totFrame$Chromosome)
+  print(myChrom)
+
+  for (i in myChrom) {
+
     print(i)
-    myFileAdd <- file.path(dirFrom, i)
-    load(myFileAdd)
-    totFrame <- rbind(totFrame, myFrame)
+    fileChrome <- file.path(dirTo, paste(i, ".RData", sep = ""))
+    chr <- totFrame[which(totFrame$Chromosome == i), ]
+    save(chr, file=fileChrome)
+    rm(chr)
+
   }
 
-  save(totFrame, file=file.path(dirTo, "Peaks.RData"))
-  # unlink(".RData")
-  rm(myFrame)
+
 
   camelCaps <- "Done"
   return(camelCaps)
