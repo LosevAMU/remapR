@@ -21,7 +21,9 @@ divideByChromosome <- function(dirFrom="", dirTo="") {
     dirTo <- path.expand("~/tmp/RData/Output")
   }
   pathOpen <- file.choose()
+  # totFrame <- get(load(pathOpen))
   load(pathOpen)
+
 
   myChrom <- unique(totFrame$Chromosome)
   print(myChrom)
