@@ -12,13 +12,11 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-makeAnnexe <- function(dirFrom="", dirTo="") {
+makeAnnexe <- function(dirFrom="") {
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")
   }
-  if (dirTo == "") {
-    dirTo <- path.expand("~/tmp/RData/Output")
-  }
+  dirTo <- dirFrom
 
   arrayChrom <- gsub(pattern = ".RData", replacement = "", x = grep("^chr", list.files(dirFrom), value = TRUE))
   arrayChromTMP <- c("chr20", "chrY")

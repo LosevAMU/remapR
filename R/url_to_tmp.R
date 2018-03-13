@@ -40,6 +40,8 @@ loadFromUrlToTmp <- function(url.in="http://tagc.univ-mrs.fr/remap/download/rema
     utils::download.file(filePath, file.path(toDir, myFile))
     dir.create(paste(toDir, "/RData/Input", sep = ""), showWarnings=FALSE)
     dir.create(paste(toDir, "/RData/Output", sep = ""), showWarnings=FALSE)
+    dir.create(paste(toDir, "/RData/Output/Full data", sep = ""), showWarnings=FALSE)
+    dir.create(paste(toDir, "/RData/Output/Random data", sep = ""), showWarnings=FALSE)
   }
 
 

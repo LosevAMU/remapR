@@ -37,6 +37,7 @@ divideByChromosome <- function(dirFrom="", dirTo="") {
     rm(chr)
 
   }
+  rm(totFrame)
 
 
 
