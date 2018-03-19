@@ -12,7 +12,7 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-fetchIDDFrame <- function(dataFrame="", ID="GSE56086") {
+fetchIDDFrame <- function(dataFrame = "", ID = "GSE56086") {
 
   if (class(dataFrame) == "data.frame") {
     return(dataFrame[which(dataFrame$ID == ID), ])

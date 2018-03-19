@@ -36,14 +36,14 @@ bedToRData <- function(dirFrom="") {
                                          "Conditions",
                                          "Score",
                                          "Brin",
-                                         "Peack1",
-                                         "Peack2",
+                                         "Peak1",
+                                         "Peak2",
                                          "Color_RGB"),
                            colClasses = c(NA, NA, NA, "character", NA, NA, NA, NA, "character"))
 
     myFrame$Score <- NULL
     myFrame$Brin <- NULL
-    myFrame$Peack2 <- NULL
+    myFrame$Peak2 <- NULL
     myFrame$Color_RGB <- NULL
 
     myFrame$ID <- matrix(unlist(strsplit(myFrame$Conditions, "[.]")), ncol=3, byrow=TRUE)[,1]

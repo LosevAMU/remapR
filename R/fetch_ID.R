@@ -12,7 +12,7 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-fetchID <- function(arrayData="", ID="GSE56086") {
+fetchID <- function(arrayData = "", ID = "GSE56086") {
   if (class(arrayData) == "character") {
     return(fetchIDFiles(dirFrom=arrayData, ID=ID))
   }

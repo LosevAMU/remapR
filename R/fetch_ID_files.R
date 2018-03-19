@@ -12,7 +12,7 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-fetchIDFiles <- function(dirFrom="", ID="GSE56086") {
+fetchIDFiles <- function(dirFrom = "", ID = "GSE56086") {
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")
   }
