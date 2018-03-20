@@ -23,6 +23,8 @@ fetchCoordsDFrame <- function(dataFrame = "",
     stop()
   }
 
+  dirFrom <- path.expand("~/tmp/RData/Output")
+
   if (begin > end) {
     message("Le début doit être inferieur que la fin.")
     stop()
@@ -30,34 +32,34 @@ fetchCoordsDFrame <- function(dataFrame = "",
 
   if (class(dataFrame) == "data.frame") {
 
-
-  load(fileNameAnnexe)
+    fileNameAnnexe <- paste(dirFrom, "/annexe.RData", sep = "")
+    load(fileNameAnnexe)
 
   if (nameChromosome == ""|(!(nameChromosome %in% annexe$Chromosome))) {
-    fileNameAnnexe <- paste(dirFrom, "/annexe.RData", sep = "")
+
 
     listChr <- paste(annexe$Chromosome, collapse=" ")
     message("Choisissez parmi les chromosomes suivantes ", listChr)
     stop()
   }
 
-  myFileOpen <- file.path(dirFrom, paste(nameChromosome, ".RData", sep = ""))
-  frameTmp <- get(load(myFileOpen))
-  rm(list = c("chr"))
+  # myFileOpen <- file.path(dirFrom, paste(nameChromosome, ".RData", sep = ""))
+  frameTmp <- dataFrame
+  # rm(list = c("chr"))
   if ((firstCut == "in") & (secondCut == "in")) {
-    frameRep <- frameTmp[which(frameTmp$Begin < end & frameTmp$End > begin), ]
+    frameRep <- frameTmp[which(frameTmp$Begin <= end & frameTmp$End >= begin), ]
   }
 
   if ((firstCut == "out") & (secondCut == "out")) {
-    frameRep <- frameTmp[which(frameTmp$Begin > begin & frameTmp$End < end), ]
+    frameRep <- frameTmp[which(frameTmp$Begin >= begin & frameTmp$End <= end), ]
   }
 
   if ((firstCut == "in") & (secondCut == "out")) {
-    frameRep <- frameTmp[which(frameTmp$End > begin & frameTmp$End < end), ]
+    frameRep <- frameTmp[which(frameTmp$End >= begin & frameTmp$End <= end), ]
   }
 
   if ((firstCut == "out") & (secondCut == "in")) {
-    frameRep <- frameTmp[which(frameTmp$Begin > begin & frameTmp$Begin < end), ]
+    frameRep <- frameTmp[which(frameTmp$Begin >= begin & frameTmp$Begin <= end), ]
   }
 
   return(frameRep)
