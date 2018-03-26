@@ -14,6 +14,7 @@
 #' @export
 plotRange <- function(x, xlim = x, main = deparse(substitute(x)),
                       col = "black", sep = 0.5, ...) {
+  library(IRanges)
   height <- 1
   if (is(xlim, "Ranges"))
     xlim <- c(min(start(xlim)), max(end(xlim)))

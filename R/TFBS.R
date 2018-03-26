@@ -35,7 +35,7 @@ TFBS <- function(arrayData = "",
   if (nrow(tablePower) == 0) {
     message("There are no TFBS with these conditions. Try another, for exemple powerNR = 1")
     repFrame <- data.frame()
-    c(repFrame, repFrame)
+
     return(repFrame)
   }
   # head(tablePower)
