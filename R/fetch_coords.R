@@ -13,9 +13,9 @@
 #'
 #' @export
 fetchCoords <- function(arrayData = "",
-                        nameChromosome = "chr1",
-                        begin = 605400,
-                        end = 629900,
+                        nameChromosome = "chr21",
+                        begin = "",
+                        end = "",
                         firstCut = "in",
                         secondCut = "in") {
   if (class(arrayData) == "character") {

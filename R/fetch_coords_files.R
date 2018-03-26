@@ -13,9 +13,9 @@
 #'
 #' @export
 fetchCoordsFiles <- function(dirFrom = "",
-                             nameChromosome = "chr1",
-                             begin = 605400,
-                             end = 629900,
+                             nameChromosome = "chr21",
+                             begin = "",
+                             end = "",
                              firstCut = "in",
                              secondCut = "in") {
   if (!(firstCut %in% c("in", "out"))|!(secondCut %in% c("in", "out"))) {
@@ -27,13 +27,21 @@ fetchCoordsFiles <- function(dirFrom = "",
     dirFrom <- path.expand("~/tmp/RData/Output")
   }
 
+  fileNameAnnexe <- paste(dirFrom, "/annexe.RData", sep = "")
+  load(fileNameAnnexe)
+
+  if (class(begin) == "character") {
+    begin <- annexe[annexe$Chromosome == nameChromosome, "minLim"]
+  }
+
+  if (class(end) == "character") {
+    end <- annexe[annexe$Chromosome == nameChromosome, "maxLim"]
+  }
+
   if (begin > end) {
     message("Le début doit être inferieur que la fin.")
     stop()
   }
-
-  fileNameAnnexe <- paste(dirFrom, "/annexe.RData", sep = "")
-  load(fileNameAnnexe)
 
   if (nameChromosome == ""|(!(nameChromosome %in% annexe$Chromosome))) {
     listChr <- paste(annexe$Chromosome, collapse=" ")

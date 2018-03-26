@@ -25,6 +25,8 @@ fetchCoordsDFrame <- function(dataFrame = "",
 
   dirFrom <- path.expand("~/tmp/RData/Output")
 
+
+
   if (begin > end) {
     message("Le début doit être inferieur que la fin.")
     stop()

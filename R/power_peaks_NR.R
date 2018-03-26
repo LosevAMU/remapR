@@ -12,30 +12,63 @@
 #' hg19ChromFile <- loadChromFile("hg19")
 #'
 #' @export
-powerPeaksNR <- function(dirFrom = "",
+powerPeaksNR <- function(arrayData = "",
                          nameChromosome = "chr21",
+                         begin = "",
+                         end = "",
+                         firstCut = "in",
+                         secondCut = "in",
                          TF="AR") {
-  if (dirFrom == "") {
-    dirFrom <- path.expand("~/tmp/RData/Output")
+  if (class(arrayData) == "character") {
+
+    if (arrayData == "") {
+      arrayData <- path.expand("~/tmp/RData/Output")
+    }
+
+    fileNameAnnexe <- paste(arrayData, "/annexe.RData", sep = "")
+    load(fileNameAnnexe)
+
+    if (nameChromosome == ""|(!(nameChromosome %in% annexe$Chromosome))) {
+      listChr <- paste(annexe$Chromosome, collapse=" ")
+      message("Choisissez parmi les chromosomes suivantes ", listChr)
+      stop()
+    }
+
+    if (class(begin) == "character") {
+      begin <- annexe[annexe$Chromosome == nameChromosome, "minLim"]
+    }
+
+    if (class(end) == "character") {
+      end <- annexe[annexe$Chromosome == nameChromosome, "maxLim"]
+    }
+
+    frameTmp <- remapR::fetchCoordsFiles(dirFrom = arrayData,
+                                    nameChromosome = nameChromosome,
+                                    begin = begin,
+                                    end = end,
+                                    firstCut = firstCut,
+                                    secondCut = secondCut)
   }
 
-  fileNameAnnexe <- paste(dirFrom, "/annexe.RData", sep = "")
-  load(fileNameAnnexe)
+  if (class(arrayData) == "data.frame") {
 
-  if (nameChromosome == ""|(!(nameChromosome %in% annexe$Chromosome))) {
-    listChr <- paste(annexe$Chromosome, collapse=" ")
-    message("Choisissez parmi les chromosomes suivantes ", listChr)
-    stop()
+    if (class(begin) == "character") {
+      message("If you use data.frame you have to determine the start of interval")
+      stop()
+    }
+
+    if (class(end) == "character") {
+      message("If you use data.frame you have to determine the end of interval")
+      stop()
+    }
+
+    frameTmp <- fetchCoordsDFrame(dataFrame = arrayData,
+                             nameChromosome = nameChromosome,
+                             begin = begin,
+                             end = end,
+                             firstCut = firstCut,
+                             secondCut = secondCut)
   }
-
-  minl <- annexe[annexe$Chromosome == nameChromosome, "minLim"]
-  maxl <- annexe[annexe$Chromosome == nameChromosome, "maxLim"]
-
-  frameTmp <- remapR:::fetchCoordsFiles(nameChromosome = nameChromosome,
-                                  begin = minl,
-                                  end = maxl,
-                                  firstCut = "out",
-                                  secondCut = "out")
 
   frameTmp <- remapR::fetchTF(arrayData = frameTmp, TF = TF)
   # library(IRanges)
@@ -55,12 +88,17 @@ powerPeaksNR <- function(dirFrom = "",
                               end = end,
                               firstCut = "in",
                               secondCut = "in")
-    if (nrow(x) > 100) {
-      print(nrow(x))
+    rowWow <- nrow(x)
+    if (rowWow > 100) {
+      message("Wow. I see the power ", rowWow, " in the ", nameChromosome, "-th chromosome.")
     }
-    redondance <- c(redondance, nrow(x))
+    redondance <- append(redondance, rowWow)
   }
 
-  frameRep <- data.frame(IRanges::start(myIR), IRanges::end(myIR), redondance)
+  frameRep <- data.frame(Chromosome=nameChromosome,
+                         Start=IRanges::start(myIR),
+                         End=IRanges::end(myIR),
+                         TF,
+                         Redondance=redondance)
   return(frameRep)
 }
