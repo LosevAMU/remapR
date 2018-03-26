@@ -23,7 +23,7 @@ frequencyTF <- function(arrayData = ""){
   for (i in listTF) {
 
     tmp <- remapR::DFrameToIRange(arrayData = remapR::fetchTF(arrayData = arrayData, TF = i))
-    vecTF <- c(vecTF, length(reduce(tmp)))
+    vecTF <- c(vecTF, length(IRanges::reduce(tmp)))
   }
 
   howManySites <- data.frame(TF = listTF, Freq = vecTF, stringsAsFactors = FALSE)
