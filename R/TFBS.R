@@ -14,12 +14,12 @@
 #' @export
 TFBS <- function(arrayData = "",
                  nameChromosome = "chr21",
-                 begin = "",
-                 end = "",
+                 begin = 5240000,
+                 end = 5245000,
                  firstCut = "in",
                  secondCut = "in",
-                 TF = "ARNT",
-                 powerNR = 10){
+                 TF = "MAX",
+                 powerNR = 3){
 
   arrayPower <- remapR:::powerPeaksNR(arrayData = arrayData,
                               nameChromosome = nameChromosome,
@@ -66,6 +66,7 @@ TFBS <- function(arrayData = "",
                              end = x$End)
 
     y <- IRanges::width(myIR)
+    # boxplot(y)
 
     fuse <- 1
     cutY <- summary(y)[5] + 0.01
@@ -74,8 +75,11 @@ TFBS <- function(arrayData = "",
       y <- y[y < cutY]
       fuse <- fuse + 1
     }
+    if (fuse > 1){
+      z <- myIR[IRanges::width(myIR) <= cutY, ]
+    } else {z <- myIR}
 
-    z <- myIR[IRanges::width(myIR) <= cutY, ]
+    # z <- myIR[IRanges::width(myIR) <= cutY, ]
 
     frameTMP <- data.frame(Chr = nameChromosome, IRanges::reduce(z))
     repFrame <- rbind(repFrame, frameTMP)

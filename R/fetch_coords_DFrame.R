@@ -13,7 +13,7 @@
 #'
 #' @export
 fetchCoordsDFrame <- function(dataFrame = "",
-                             nameChromosome = "chr1",
+                             nameChromosome = "chr21",
                              begin = 605400,
                              end = 629900,
                              firstCut = "in",
