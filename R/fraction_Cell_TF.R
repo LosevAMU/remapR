@@ -30,7 +30,8 @@ fractionCellTF <- function(arrayData = "",
                          firstCut = firstCut,
                          secondCut = secondCut)
   # head(arrBrut)
-  # rm(list = ls()[!grepl("var.name", ls())])
+  # rm(arrBrut)
+  # rm(list = ls()[!grepl("myL", ls())])
 
   beginInt <- arrBrut$Begin[1]
   endInt <- arrBrut$End[nrow(arrBrut)]

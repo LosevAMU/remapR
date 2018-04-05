@@ -25,7 +25,11 @@
 #' remap <- inventarisation(mode=version)
 #'
 #' @export
-inventarisation <- function(mode_res="", version="", species="", assembly="", type="") {
+inventarisation <- function(mode_res="",
+                            version="",
+                            species="",
+                            assembly="",
+                            type="") {
 
 
   # from
