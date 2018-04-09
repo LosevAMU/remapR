@@ -18,6 +18,7 @@ fetchCoordsDFrame <- function(dataFrame = "",
                              end = 629900,
                              firstCut = "in",
                              secondCut = "in") {
+  annexe <- data.frame()
   if (!(firstCut %in% c("in", "out"))|!(secondCut %in% c("in", "out"))) {
     message("Choose 'firstCut' and 'secondCut' from the following: ", paste( c("'in'", "'out'"), collapse=" "))
     stop()

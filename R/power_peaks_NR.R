@@ -19,6 +19,7 @@ powerPeaksNR <- function(arrayData = "",
                          firstCut = "in",
                          secondCut = "in",
                          TF="AR") {
+  annexe <- data.frame()
   if (class(arrayData) == "character") {
 
     if (arrayData == "") {

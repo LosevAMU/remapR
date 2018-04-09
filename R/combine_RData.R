@@ -23,6 +23,7 @@ combineRData <- function(dirFrom="", dirTo="") {
   }
 
   totFrame <- data.frame()
+  myFrame <- data.frame()
   # i <- "outaa.RData"
   for (i in grep("RData$", list.files(dirFrom), value = TRUE)) {
     print(i)

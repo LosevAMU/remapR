@@ -2,21 +2,40 @@
 % Please edit documentation in R/array_intersections.R
 \name{arrayIntersections}
 \alias{arrayIntersections}
-\title{Load chromosomes sizes file}
+\title{Counts array of intersections of Cis-regulatory elements (CRE)}
 \usage{
-loadChromFile <- function(genome)
+arrayIntersections( list of params )
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{Array of MACS-peaks in .bed or .RData format. Default folder is "~/tmp/RData/Output".}
+
+\item{nameChromosome}{Name of chromosome.}
+
+\item{begin}{Position of starting of searching on chromosome.}
+
+\item{end}{Position of ending of searching on chromosome.}
+
+\item{firstCut}{Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+"out" means that begin of MACS-peak can be only after param "begin".}
+
+\item{secondCut}{Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+"out" means that end of MACS-peak can be only before param "end".}
+
+\item{massTF}{can be number or list of TFs. Number means minimal quantity of presence of MACS-peaks in data, in other words the most frequent TFs.}
+
+\item{powerNR}{Hom many times TFs can be found in one location.}
+
+\item{tableNormal}{True or False. The way of presentation of the table: normalized (TRUE) or in the absolute values (FALSE).}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+The square table of intersection of the CREs.
 }
 \description{
-Load preloaded chromosome sizes files.
+For every TF the fonction counts how many TFs can be found on CRE of given TF.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+array <- arrayIntersections <- function(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", massTF = 10000, powerNR = 10, tableNormal = TRUE)
 
 }
 \author{

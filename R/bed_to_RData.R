@@ -1,15 +1,15 @@
-#' @title Load chromosomes sizes file
+#' @title Bed to RData
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description This function converts files from *.bed to .RData files.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom The path to files. By default "~/tmp/RData/Input".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage bedToRData(dirFrom)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' bedToRData(dirFrom="")
 #'
 #' @export
 bedToRData <- function(dirFrom="") {

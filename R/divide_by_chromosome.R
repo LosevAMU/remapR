@@ -13,6 +13,7 @@
 #'
 #' @export
 divideByChromosome <- function(dirFrom="", dirTo="") {
+  totFrame <- data.frame()
 
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")

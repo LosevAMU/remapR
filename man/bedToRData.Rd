@@ -2,21 +2,21 @@
 % Please edit documentation in R/bed_to_RData.R
 \name{bedToRData}
 \alias{bedToRData}
-\title{Load chromosomes sizes file}
+\title{Bed to RData}
 \usage{
-loadChromFile <- function(genome)
+bedToRData(dirFrom)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirFrom}{The path to files. By default "~/tmp/RData/Input".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+This function converts files from *.bed to .RData files.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+bedToRData(dirFrom="")
 
 }
 \author{

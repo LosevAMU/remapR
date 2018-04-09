@@ -18,7 +18,7 @@ plotRange <- function(x, xlim = x, main = deparse(substitute(x)),
   height <- 1
   if (is(xlim, "Ranges"))
     xlim <- c(min(start(xlim)), max(end(xlim)))
-  bins <- disjointBins(IRanges(start(x), end(x) + 1))
+  bins <- IRanges::disjointBins(IRanges::IRanges(start(x), end(x) + 1))
   plot.new()
   plot.window(xlim, c(0, max(bins)*(height + sep)))
   ybottom <- bins * (sep + height) - height

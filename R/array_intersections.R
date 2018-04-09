@@ -1,15 +1,28 @@
-#' @title Load chromosomes sizes file
+#' @title Counts array of intersections of Cis-regulatory elements (CRE)
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description For every TF the fonction counts how many TFs can be found on CRE of given TF.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Array of MACS-peaks in .bed or .RData format. Default folder is "~/tmp/RData/Output".
+#' @param nameChromosome Name of chromosome.
+#' @param begin Position of starting of searching on chromosome.
+#' @param end Position of ending of searching on chromosome.
+#' @param firstCut Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+#' "out" means that begin of MACS-peak can be only after param "begin".
+#' @param secondCut Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+#' "out" means that end of MACS-peak can be only before param "end".
+#' @param massTF can be number or list of TFs. Number means minimal quantity of presence of MACS-peaks in data, in other words the most frequent TFs.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @param powerNR Hom many times TFs can be found in one location.
+#' @param tableNormal True or False. The way of presentation of the table: normalized (TRUE) or in the absolute values (FALSE).
 #'
-#' @usage loadChromFile <- function(genome)
+#'
+#' @return The square table of intersection of the CREs.
+#'
+#' @usage arrayIntersections( list of params )
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' array <- arrayIntersections <- function(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = 10000, powerNR = 10, tableNormal = TRUE)
 #'
 #' @export
 arrayIntersections <- function(arrayData = "",
@@ -18,7 +31,7 @@ arrayIntersections <- function(arrayData = "",
                                end = "",
                                firstCut = "in",
                                secondCut = "in",
-                               massTF = head(howManySitesSort$TF, 15),
+                               massTF = 10000,
                                powerNR = 10,
                                tableNormal = TRUE) {
 

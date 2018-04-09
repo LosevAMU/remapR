@@ -54,7 +54,7 @@ fractionCellTF <- function(arrayData = "",
                                        powerNR = powerNR)
   # head(allTFBS)
   IRsorted <- remapR::DFrameToIRange(allTFBS)
-  IRsorted <- reduce(IRsorted)
+  IRsorted <- IRanges::reduce(IRsorted)
   nlignes <- length(IRsorted)
   # i <- 1
   myLCell <- data.frame()

@@ -7,11 +7,11 @@
 hiAnonyme(who)
 }
 \arguments{
-\item{who}{character(1) The name of the person you wish to start a
+\item{who}{The name of the person you wish to start a
 conversation with.}
 }
 \value{
-character(1) A line of text to be used when starting conversations.
+A line of text to be used when starting conversations.
 }
 \description{
 This function generates some helpful text that can be used to start
