@@ -19,7 +19,7 @@ fetchCoordsFiles <- function(dirFrom = "",
                              firstCut = "in",
                              secondCut = "in") {
   if (!(firstCut %in% c("in", "out"))|!(secondCut %in% c("in", "out"))) {
-    message("Choisissez parmi les firstCut et secondCut parmi suivantes ", paste( c("'in'", "'out'"), collapse=" "))
+    message("Choose 'firstCut' and 'secondCut' from the following: ", paste( c("'in'", "'out'"), collapse=" "))
     stop()
   }
 
@@ -39,13 +39,13 @@ fetchCoordsFiles <- function(dirFrom = "",
   }
 
   if (begin > end) {
-    message("Le début doit être inferieur que la fin.")
+    message("The 'begin' must be less than the 'end'.")
     stop()
   }
 
   if (nameChromosome == ""|(!(nameChromosome %in% annexe$Chromosome))) {
     listChr <- paste(annexe$Chromosome, collapse=" ")
-    message("Choisissez parmi les chromosomes suivantes ", listChr)
+    message("Choose from the following chromosomes: ", listChr)
     stop()
   }
 

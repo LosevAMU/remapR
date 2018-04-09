@@ -2,21 +2,23 @@
 % Please edit documentation in R/url_to_tmp.R
 \name{loadFromUrlToTmp}
 \alias{loadFromUrlToTmp}
-\title{Load file remapR from URL to tmp}
+\title{Loads file of listing remapR from URL to ~/tmp}
 \usage{
-loadChromFile <- function(genome)
+loadFromUrlToTmp(url.in, tmp.to)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{url.in}{The path to a listing-file.}
+
+\item{tmp.to}{The name of listing-file.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data.Frame from the listing-file.
 }
 \description{
-Load files.
+Loads listing-file and creates ~/tmp.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- loadFromUrlToTmp("http://tagc.univ-mrs.fr/remap/download/remapR", "remapR.csv")
 
 }
 \author{

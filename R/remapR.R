@@ -1,8 +1,8 @@
-#' remapR: package to deal with good and bad bees
+#' remapR: package to deal with ReMap
 #'
-#' Extremely important package for every Bear
+#' Extremely important package for every R-user who uses ReMap
 #'
-#' I've written this package a long time ago in a far-far galaxy.
+#'
 #'
 #' @name remapR
 #' @docType package

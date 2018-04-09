@@ -1,10 +1,14 @@
 Package: remapR
-Title: What the Package Does (one line, title case)
-Version: 0.0.1
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Bioinformatic tools to transform ReMap-data in R
+Version: 1.0.0
+Authors@R: person("Alexey", "Solovyev", email = "alexey.solovyev@etu.univ-amu.fr", role = c("aut", "cre"))
+Description: Bioinformatic tools to transform ReMap-data in R.
 Depends: R (>= 3.4.3)
-License: What license is it under?
+Imports:
+  IRanges (>= 1.1.1),
+  ggplot2 (>= 2.2.1)
+License: GNU Affero General Public License
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+Suggests: testthat

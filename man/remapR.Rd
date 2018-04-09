@@ -4,10 +4,7 @@
 \name{remapR}
 \alias{remapR}
 \alias{remapR-package}
-\title{remapR: package to deal with good and bad bees}
+\title{remapR: package to deal with ReMap}
 \description{
-Extremely important package for every Bear
-}
-\details{
-I've written this package a long time ago in a far-far galaxy.
+Extremely important package for every R-user who uses ReMap
 }

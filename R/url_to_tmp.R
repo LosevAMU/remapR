@@ -1,15 +1,16 @@
-#' @title Load file remapR from URL to tmp
+#' @title Loads file of listing remapR from URL to ~/tmp
 #' @author Alexey Solovyev
-#' @description Load files.
+#' @description Loads listing-file and creates ~/tmp.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param url.in The path to a listing-file.
+#' @param tmp.to The name of listing-file.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data.Frame from the listing-file.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage loadFromUrlToTmp(url.in, tmp.to)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- loadFromUrlToTmp("http://tagc.univ-mrs.fr/remap/download/remapR", "remapR.csv")
 #'
 #' @export
 loadFromUrlToTmp <- function(url.in="http://tagc.univ-mrs.fr/remap/download/remapR",
@@ -47,6 +48,6 @@ loadFromUrlToTmp <- function(url.in="http://tagc.univ-mrs.fr/remap/download/rema
 
   myFrame <- read.csv(file=file.path(toDir, myFile),
                       colClasses=c("character","character","character","character","character"))
-  # myFrame
+  # class(myFrame)
   return(myFrame)
 }

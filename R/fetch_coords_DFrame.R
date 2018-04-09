@@ -19,7 +19,7 @@ fetchCoordsDFrame <- function(dataFrame = "",
                              firstCut = "in",
                              secondCut = "in") {
   if (!(firstCut %in% c("in", "out"))|!(secondCut %in% c("in", "out"))) {
-    message("Choisissez parmi les firstCut et secondCut parmi suivantes ", paste( c("'in'", "'out'"), collapse=" "))
+    message("Choose 'firstCut' and 'secondCut' from the following: ", paste( c("'in'", "'out'"), collapse=" "))
     stop()
   }
 
@@ -28,7 +28,7 @@ fetchCoordsDFrame <- function(dataFrame = "",
 
 
   if (begin > end) {
-    message("Le début doit être inferieur que la fin.")
+    message("The 'begin' must be less than the 'end'.")
     stop()
   }
 
@@ -41,7 +41,7 @@ fetchCoordsDFrame <- function(dataFrame = "",
 
 
     listChr <- paste(annexe$Chromosome, collapse=" ")
-    message("Choisissez parmi les chromosomes suivantes ", listChr)
+    message("Choose from the following chromosomes: ", listChr)
     stop()
   }
 
