@@ -15,10 +15,10 @@
 #' @export
 fetchCell <- function(arrayData = "", cell = "vcap_shctr_r1881") {
   if (class(arrayData) == "character") {
-    return(remapR::fetchCellFiles(dirFrom=arrayData, cell=cell))
+    return(fetchCellFiles(dirFrom=arrayData, cell=cell))
   }
   if (class(arrayData) == "data.frame") {
-    return(remapR::fetchCellDFrame(dataFrame=arrayData, cell=cell))
+    return(fetchCellDFrame(dataFrame=arrayData, cell=cell))
   }
   print("I cannot return any values because you use wrong arrayData")
   return("I cannot return any values because you use wrong arrayData")

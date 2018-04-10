@@ -15,10 +15,10 @@
 #' @export
 fetchTF <- function(arrayData = "", TF = "FOXA1") {
   if (class(arrayData) == "character") {
-    return(remapR::fetchTFFiles(dirFrom=arrayData, TF=TF))
+    return(fetchTFFiles(dirFrom=arrayData, TF=TF))
   }
   if (class(arrayData) == "data.frame") {
-    return(remapR::fetchTFDFrame(dataFrame=arrayData, TF=TF))
+    return(fetchTFDFrame(dataFrame=arrayData, TF=TF))
   }
   print("I cannot return any values because you use wrong arrayData")
   return("I cannot return any values because you use wrong arrayData")

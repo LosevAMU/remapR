@@ -51,14 +51,14 @@ fractionCellTF <- function(arrayData = "",
   endInt <- arrBrut$End[nrow(arrBrut)]
 
   if (class(massTF) == "numeric"){
-    TFFreq <- remapR::frequencyTF(arrayData = arrBrut)
+    TFFreq <- frequencyTF(arrayData = arrBrut)
     TFselected <- head(TFFreq$TF, massTF)
 
   } else {
     TFselected <- massTF
   }
 
-  allTFBS <- remapR::TFBSsOnChromosome(arrayData = arrBrut,
+  allTFBS <- TFBSsOnChromosome(arrayData = arrBrut,
                                        nameChromosome = nameChromosome,
                                        begin = beginInt,
                                        end = endInt,
@@ -67,7 +67,7 @@ fractionCellTF <- function(arrayData = "",
                                        massTF = TFselected,
                                        powerNR = powerNR)
   # head(allTFBS)
-  IRsorted <- remapR::DFrameToIRange(allTFBS)
+  IRsorted <- DFrameToIRange(allTFBS)
   IRsorted <- IRanges::reduce(IRsorted)
   nlignes <- length(IRsorted)
   # i <- 1

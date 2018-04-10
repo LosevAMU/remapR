@@ -28,7 +28,7 @@ fetchCoords <- function(arrayData = "",
                         firstCut = "in",
                         secondCut = "in") {
   if (class(arrayData) == "character") {
-    return(remapR::fetchCoordsFiles(dirFrom = arrayData,
+    return(fetchCoordsFiles(dirFrom = arrayData,
                             nameChromosome = nameChromosome,
                             begin = begin,
                             end = end,
@@ -36,7 +36,7 @@ fetchCoords <- function(arrayData = "",
                             secondCut = secondCut))
   }
   if (class(arrayData) == "data.frame") {
-    return(remapR::fetchCoordsDFrame(dataFrame = arrayData,
+    return(fetchCoordsDFrame(dataFrame = arrayData,
                              nameChromosome = nameChromosome,
                              begin = begin,
                              end = end,

@@ -37,7 +37,7 @@ arrayIntersections <- function(arrayData = "",
                                powerNR = 50,
                                tableNormal = TRUE) {
 
-  tmpTot <- remapR::TFBSsOnChromosome(arrayData = arrayData,
+  tmpTot <- TFBSsOnChromosome(arrayData = arrayData,
                                       nameChromosome = nameChromosome,
                                       begin = begin,
                                       end = begin,
@@ -71,8 +71,8 @@ arrayIntersections <- function(arrayData = "",
 
     j <- 1
     for (j in seq(from = 1, to = myLen)) {
-      myIR1 <- remapR::DFrameToIRange(arrayData = tmpTot[tmpTot$TF == TFs[i], ])
-      myIR2 <- remapR::DFrameToIRange(arrayData = tmpTot[tmpTot$TF == TFs[j], ])
+      myIR1 <- DFrameToIRange(arrayData = tmpTot[tmpTot$TF == TFs[i], ])
+      myIR2 <- DFrameToIRange(arrayData = tmpTot[tmpTot$TF == TFs[j], ])
       overLaps <- IRanges::findOverlaps(myIR1, myIR2)
       # length(unique(subjectHits(overLaps)))
       my.array[i, j] <- length(unique(S4Vectors::queryHits(overLaps)))

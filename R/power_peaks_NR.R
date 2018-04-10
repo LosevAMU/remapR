@@ -53,7 +53,7 @@ powerPeaksNR <- function(arrayData = "",
       end <- annexe[annexe$Chromosome == nameChromosome, "maxLim"]
     }
 
-    frameTmp <- remapR::fetchCoordsFiles(dirFrom = arrayData,
+    frameTmp <- fetchCoordsFiles(dirFrom = arrayData,
                                     nameChromosome = nameChromosome,
                                     begin = begin,
                                     end = end,
@@ -81,7 +81,7 @@ powerPeaksNR <- function(arrayData = "",
                              secondCut = secondCut)
   }
 
-  frameTmp <- remapR::fetchTF(arrayData = frameTmp, TF = TF)
+  frameTmp <- fetchTF(arrayData = frameTmp, TF = TF)
   # library(IRanges)
 
   myIR <-IRanges::IRanges(start = frameTmp$Begin,
@@ -93,7 +93,7 @@ powerPeaksNR <- function(arrayData = "",
   for (i in seq(length(myIR))) {
     begin <- IRanges::start(myIR[i])
     end <- IRanges::end(myIR[i])
-    x <- remapR::fetchCoords(arrayData = frameTmp,
+    x <- fetchCoords(arrayData = frameTmp,
                               nameChromosome = nameChromosome,
                               begin = begin,
                               end = end,

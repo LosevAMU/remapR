@@ -44,7 +44,7 @@ makeRandomSet <- function(dirFrom = "", dirTo = "", pourcentage = 0.0125) {
     save(chr, file=myFileOutput)
   }
 
-  remapR::makeAnnexe(dirFrom = dirTo)
+  makeAnnexe(dirFrom = dirTo)
 
   camelCaps <- "Done"
   return(camelCaps)

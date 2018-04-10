@@ -27,7 +27,7 @@ downloadBedFile <- function(targetDir = "",
                             type = "Test peaks",
                             force = FALSE) {
 
-  url <- remapR::inventarisation(mode_res="path",
+  url <- inventarisation(mode_res="path",
                                  version=version,
                                  species=species,
                                  assembly=assembly,

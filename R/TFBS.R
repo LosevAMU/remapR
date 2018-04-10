@@ -32,7 +32,7 @@ TFBS <- function(arrayData = "",
                  TF = "AR",
                  powerNR = 3){
 
-  arrayPower <- remapR:::powerPeaksNR(arrayData = arrayData,
+  arrayPower <- powerPeaksNR(arrayData = arrayData,
                               nameChromosome = nameChromosome,
                               begin = begin,
                               end = end,
@@ -51,13 +51,13 @@ TFBS <- function(arrayData = "",
   }
   # head(tablePower)
 
-  fullTable <- remapR:::fetchCoords(arrayData = arrayData,
+  fullTable <- fetchCoords(arrayData = arrayData,
                                     nameChromosome = nameChromosome,
                                     begin = begin,
                                     end = end,
                                     firstCut = firstCut,
                                     secondCut = secondCut)
-  fullTable <- remapR:::fetchTF(arrayData = fullTable,
+  fullTable <- fetchTF(arrayData = fullTable,
                                 TF = TF)
 
   repFrame <- data.frame()
@@ -65,7 +65,7 @@ TFBS <- function(arrayData = "",
 
   for (i in seq(nrow(tablePower))) {
     message(i, " from ", nrow(tablePower))
-    x <- remapR:::fetchCoords(arrayData = fullTable,
+    x <- fetchCoords(arrayData = fullTable,
                               nameChromosome = nameChromosome,
                               begin = tablePower[i, "Start"],
                               end = tablePower[i, "End"],

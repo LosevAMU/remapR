@@ -23,7 +23,7 @@ frequencyTF <- function(arrayData = data.frame){
   # i <- "FOXJ2"
   for (i in listTF) {
 
-    tmp <- remapR::DFrameToIRange(arrayData = remapR::fetchTF(arrayData = arrayData, TF = i))
+    tmp <- DFrameToIRange(arrayData = fetchTF(arrayData = arrayData, TF = i))
     vecTF <- c(vecTF, length(IRanges::reduce(tmp)))
   }
 

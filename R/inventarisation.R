@@ -38,7 +38,7 @@ inventarisation <- function(mode_res = "",
   # # download and import
   # utils::download.file(filePath, file.path(toDir, myFile))
 
-  myFrame <- remapR::loadFromUrlToTmp()
+  myFrame <- loadFromUrlToTmp()
   tmpFrame <- myFrame[myFrame$remap_version == version
                       & myFrame$species == species
                       & myFrame$assembly == assembly

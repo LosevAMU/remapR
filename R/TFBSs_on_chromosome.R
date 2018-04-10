@@ -35,7 +35,7 @@ TFBSsOnChromosome <- function(arrayData = "",
                               massTF = 10000,
                               powerNR = 20) {
 
-  test <- remapR::fetchCoords(arrayData = arrayData,
+  test <- fetchCoords(arrayData = arrayData,
                               nameChromosome = nameChromosome,
                               begin = begin,
                               end = end,
@@ -54,8 +54,8 @@ TFBSsOnChromosome <- function(arrayData = "",
   myLTFBS <- data.frame()
   for (i in bignames) {
     message('We are looking for TFBS of ', i)
-    tmpArray <- remapR::fetchTF(arrayData = test, TF = i)
-    tmp <- remapR::TFBS(arrayData = tmpArray,
+    tmpArray <- fetchTF(arrayData = test, TF = i)
+    tmp <- TFBS(arrayData = tmpArray,
                          nameChromosome = nameChromosome,
                          begin = beginInt,
                          end = endInt,
