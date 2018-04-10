@@ -13,10 +13,11 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks in this address.
 #'
-#' @usage fetchCoords(list of params)
+#' @usage fetchCoordsFiles(dirFrom = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in")
 #'
 #' @examples
-#' myFrame <- fetchCoords(dirFrom = "", nameChromosome = "chr21", begin = "",
+#' myFrame <- fetchCoordsFiles(dirFrom = "", nameChromosome = "chr21", begin = "",
 #' end = "", firstCut = "in", secondCut = "in")
 #'
 #' @export

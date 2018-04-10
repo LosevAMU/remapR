@@ -4,7 +4,8 @@
 \alias{powerPeaksNR}
 \title{How many MACS-peaks are in region for given TF}
 \usage{
-powerPeaksNR(list of params)
+powerPeaksNR(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", TF="AR")
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

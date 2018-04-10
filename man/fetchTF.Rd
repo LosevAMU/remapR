@@ -4,7 +4,7 @@
 \alias{fetchTF}
 \title{Select TF}
 \usage{
-fetchTF(arrayData, TF)
+fetchTF(arrayData = "", TF = "FOXA1")
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

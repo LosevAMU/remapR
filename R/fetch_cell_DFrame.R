@@ -2,12 +2,12 @@
 #' @author Alexey Solovyev
 #' @description Function selects given cell line.
 #'
-#' @param arrayData Data frame.
+#' @param dataFrame Data frame.
 #' @param cell Name of line.
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchCellDFrame(dataFrame, cell)
+#' @usage fetchCellDFrame(dataFrame="", cell="vcap_shctr_r1881")
 #'
 #' @examples
 #' myFrame <- fetchCellDFrame(dataFrame = "", cell = "vcap_shctr_r1881")

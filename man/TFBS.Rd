@@ -4,7 +4,8 @@
 \alias{TFBS}
 \title{CREs for given TF}
 \usage{
-TFBS(list of params)
+TFBS(arrayData = "", nameChromosome = "chr21", begin = 5240000, end = 52450000,
+firstCut = "in", secondCut = "in", TF = "AR", powerNR = 3)
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

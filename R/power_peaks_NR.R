@@ -14,7 +14,8 @@
 #'
 #' @return Data Frame (class = "data.frame") of quantity of peaks in this address.
 #'
-#' @usage powerPeaksNR(list of params)
+#' @usage powerPeaksNR(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", TF="AR")
 #'
 #' @examples
 #' myFrame <- powerPeaksNR(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
@@ -92,7 +93,7 @@ powerPeaksNR <- function(arrayData = "",
   for (i in seq(length(myIR))) {
     begin <- IRanges::start(myIR[i])
     end <- IRanges::end(myIR[i])
-    x <- remapR:::fetchCoords(arrayData = frameTmp,
+    x <- remapR::fetchCoords(arrayData = frameTmp,
                               nameChromosome = nameChromosome,
                               begin = begin,
                               end = end,

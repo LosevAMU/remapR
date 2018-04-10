@@ -4,7 +4,7 @@
 \alias{frequencyTF}
 \title{How many regions contain the factor}
 \usage{
-frequencyTF(arrayData)
+frequencyTF(arrayData = data.frame)
 }
 \arguments{
 \item{arrayData}{Data from one of Fetches.}

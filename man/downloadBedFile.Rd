@@ -4,7 +4,8 @@
 \alias{downloadBedFile}
 \title{Loads file from URL to tmp}
 \usage{
-downloadBedFile(list of params)
+downloadBedFile(targetDir = "", version = "2018", species = "Homo sapiens",
+ assembly = "hg38", type = "Test peaks", force = FALSE)
 }
 \arguments{
 \item{targetDir}{The name of the directory to download the file in, by default "~/tmp".}

@@ -4,12 +4,12 @@
 \alias{fetchTFDFrame}
 \title{Select TF}
 \usage{
-fetchTFDFrame(dataFrame, TF)
+fetchTFDFrame(dataFrame = "", TF = "FOXA1")
 }
 \arguments{
-\item{TF}{Name of TF.}
+\item{dataFrame}{Data frame.}
 
-\item{arrayData}{Data frame.}
+\item{TF}{Name of TF.}
 }
 \value{
 Data Frame (class = "data.frame") of peaks of this line.

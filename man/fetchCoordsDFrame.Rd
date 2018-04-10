@@ -4,7 +4,8 @@
 \alias{fetchCoordsDFrame}
 \title{Search by address}
 \usage{
-fetchCoords(list of params)
+fetchCoordsDFrame(dataFrame = "", nameChromosome = "chr21", begin = 605400, end = 629900,
+firstCut = "in", secondCut = "in")
 }
 \arguments{
 \item{dataFrame}{Data.}

@@ -4,7 +4,7 @@
 \alias{DFrameToIRange}
 \title{DataFrame to IRange}
 \usage{
-DFrameToIRange(arrayData)
+DFrameToIRange(arrayData = "")
 }
 \arguments{
 \item{arrayData}{The data to convert. Second column of arrayData is start of IRange,

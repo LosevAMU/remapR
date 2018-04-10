@@ -12,7 +12,7 @@
 #'
 #' @return Path to the chosen file.
 #'
-#' @usage inventarisation(list of params)
+#' @usage inventarisation(mode_res = "", version = "", species = "", assembly = "", type = "")
 #'
 #' @examples
 #' remapFile <- inventarisation(mode_res = "path", version = "2018",

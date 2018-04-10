@@ -7,7 +7,7 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchTF(arrayData, TF)
+#' @usage fetchTF(arrayData = "", TF = "FOXA1")
 #'
 #' @examples
 #' myFrame <- fetchTF(arrayData = "", TF = "FOXA1")
@@ -15,10 +15,10 @@
 #' @export
 fetchTF <- function(arrayData = "", TF = "FOXA1") {
   if (class(arrayData) == "character") {
-    return(fetchTFFiles(dirFrom=arrayData, TF=TF))
+    return(remapR::fetchTFFiles(dirFrom=arrayData, TF=TF))
   }
   if (class(arrayData) == "data.frame") {
-    return(fetchTFDFrame(dataFrame=arrayData, TF=TF))
+    return(remapR::fetchTFDFrame(dataFrame=arrayData, TF=TF))
   }
   print("I cannot return any values because you use wrong arrayData")
   return("I cannot return any values because you use wrong arrayData")

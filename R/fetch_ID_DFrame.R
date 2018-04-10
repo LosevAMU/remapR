@@ -2,12 +2,12 @@
 #' @author Alexey Solovyev
 #' @description Function selects given ID.
 #'
-#' @param arrayData Data frame.
+#' @param dataFrame Data frame.
 #' @param ID Name of ID.
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchIDDFrame(dataFrame, ID)
+#' @usage fetchIDDFrame(dataFrame = "", ID = "GSE56086")
 #'
 #' @examples
 #' myFrame <- fetchIDDFrame(dataFrame = "", ID = "GSE56086")

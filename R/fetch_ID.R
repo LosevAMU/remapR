@@ -7,7 +7,7 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchID(arrayData, ID)
+#' @usage fetchID(arrayData = "", ID = "GSE56086")
 #'
 #' @examples
 #' myFrame <- fetchID(arrayData = "", ID = "GSE56086")

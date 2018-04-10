@@ -8,7 +8,7 @@
 #'
 #' @return In case of success it returns the word "Done".
 #'
-#' @usage makeRandomSet(dirFrom, dirTo, pourcentage)
+#' @usage makeRandomSet(dirFrom = "", dirTo = "", pourcentage = 0.0125)
 #'
 #' @examples
 #' makeRandomSet(dirFrom = "", dirTo = "", pourcentage = 0.0125)
@@ -25,7 +25,7 @@ makeRandomSet <- function(dirFrom = "", dirTo = "", pourcentage = 0.0125) {
 
   arrayChrom <- gsub(pattern = ".RData", replacement = "", x = grep("^chr", list.files(dirFrom), value = TRUE))
   # arrayChromTMP <- c("chr20", "chrY")
-  genomeLen <- length(arrayChrom)
+  # genomeLen <- length(arrayChrom)
 
   # arrayChrom <- arrayChromTMP
 

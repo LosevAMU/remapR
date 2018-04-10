@@ -6,7 +6,7 @@
 #'
 #' @return Table of quantity of MACS-peaks on chromosome. In case of success it returns the word "Done".
 #'
-#' @usage makeAnnexe(dirFrom)
+#' @usage makeAnnexe(dirFrom="")
 #'
 #' @examples
 #' makeAnnexe(dirFrom="")
@@ -16,17 +16,17 @@ makeAnnexe <- function(dirFrom="") {
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")
   }
-  dirTo <- dirFrom
+  # dirTo <- dirFrom
 
   arrayChrom <- gsub(pattern = ".RData", replacement = "", x = grep("^chr", list.files(dirFrom), value = TRUE))
-  arrayChromTMP <- c("chr20", "chrY")
+  # arrayChromTMP <- c("chr20", "chrY")
   genomeLen <- length(arrayChrom)
 
   # arrayChrom <- arrayChromTMP
 
   minLim <- rep.int(x = 0, times = genomeLen)
   maxLim <- rep.int(x = 0, times = genomeLen)
-  count <- rep.int(x = 0, times = genomeLen)
+  # count <- rep.int(x = 0, times = genomeLen)
 
   annexe <- data.frame(Chromosome=arrayChrom, minLim, maxLim)
   row.names(annexe) <- arrayChrom

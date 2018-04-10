@@ -4,7 +4,8 @@
 \alias{fetchCoordsFiles}
 \title{Search by address}
 \usage{
-fetchCoords(list of params)
+fetchCoordsFiles(dirFrom = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in")
 }
 \arguments{
 \item{dirFrom}{Path to data, by default "~/tmp/RData/Output".}
@@ -28,7 +29,7 @@ Data Frame (class = "data.frame") of peaks in this address.
 Function selects in given address.
 }
 \examples{
-myFrame <- fetchCoords(dirFrom = "", nameChromosome = "chr21", begin = "",
+myFrame <- fetchCoordsFiles(dirFrom = "", nameChromosome = "chr21", begin = "",
 end = "", firstCut = "in", secondCut = "in")
 
 }

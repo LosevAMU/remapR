@@ -4,7 +4,7 @@
 \alias{bedToRData}
 \title{Bed to RData}
 \usage{
-bedToRData(dirFrom)
+bedToRData(dirFrom="")
 }
 \arguments{
 \item{dirFrom}{The path to files. By default "~/tmp/RData/Input".}

@@ -15,7 +15,8 @@
 #'
 #' @return Data Frame (class = "data.frame") of set of CREs.
 #'
-#' @usage TFBSsOnChromosome(list of params)
+#' @usage TFBSsOnChromosome(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = 10000, powerNR = 20)
 #'
 #' @examples
 #' myFrame <- TFBSsOnChromosome(arrayData = "", nameChromosome = "chr21", begin = "", end = "",

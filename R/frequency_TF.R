@@ -6,7 +6,7 @@
 #'
 #' @return The sorted list of TFs and the quantity of regions.
 #'
-#' @usage frequencyTF(arrayData)
+#' @usage frequencyTF(arrayData = data.frame)
 #'
 #' @examples
 #' myList <- frequencyTF(arrayData = "")

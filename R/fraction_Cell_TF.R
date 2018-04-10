@@ -18,7 +18,8 @@
 #' quantity of different TFs, quantity of TFs of dominating cellular line
 #' and fraction of TFs of dominating cellular line.
 #'
-#' @usage fetchCoords(list of params)
+#' @usage fractionCellTF(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = 50, powerNR = 3, limitPart = 0.2)
 #'
 #' @examples
 #' myFrame <- fractionCellTF(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
@@ -81,7 +82,7 @@ fractionCellTF <- function(arrayData = "",
     tablTmp <- data.frame()
     vectorCell <- c()
     vectorNom <- c()
-    vectorProc <- c()
+    # vectorProc <- c()
     for (j in listCell) {
       vectorCell <- c(vectorCell, j)
       vectorNom <- c(vectorNom, length(unique(tmpTot[tmpTot$Cell_Mod == j, ]$TF)))

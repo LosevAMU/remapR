@@ -4,7 +4,7 @@
 \alias{fetchTFFiles}
 \title{Select TF}
 \usage{
-fetchTFFiles(dirFrom, TF)
+fetchTFFiles(dirFrom = "", TF = "FOXA1")
 }
 \arguments{
 \item{dirFrom}{Path to data, by default "~/tmp/RData/Output".}

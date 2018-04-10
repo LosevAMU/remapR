@@ -8,6 +8,8 @@
 #'
 #' @return A line of text to be used when starting conversations.
 #'
+#' @usage hiAnonyme(who)
+#'
 #' @examples
 #' hi("Alexey Solovyev")
 #'

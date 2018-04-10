@@ -4,7 +4,8 @@
 \alias{fractionCellTF}
 \title{Fraction of factors of the dominating cellular line}
 \usage{
-fetchCoords(list of params)
+fractionCellTF(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", massTF = 50, powerNR = 3, limitPart = 0.2)
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

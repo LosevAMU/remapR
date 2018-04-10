@@ -6,7 +6,7 @@
 #'
 #' @return In case of success it returns the word "Done".
 #'
-#' @usage divideByChromosome(dirTo)
+#' @usage divideByChromosome(dirTo="")
 #'
 #' @examples
 #' divideByChromosome(dirTo="")

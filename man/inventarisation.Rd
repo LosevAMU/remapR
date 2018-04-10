@@ -4,7 +4,7 @@
 \alias{inventarisation}
 \title{Path to choosen set}
 \usage{
-inventarisation(list of params)
+inventarisation(mode_res = "", version = "", species = "", assembly = "", type = "")
 }
 \arguments{
 \item{mode_res}{Determines the type of answer, it can be

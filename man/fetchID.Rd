@@ -4,7 +4,7 @@
 \alias{fetchID}
 \title{Select ID}
 \usage{
-fetchID(arrayData, ID)
+fetchID(arrayData = "", ID = "GSE56086")
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

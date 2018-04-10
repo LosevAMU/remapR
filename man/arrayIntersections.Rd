@@ -4,7 +4,8 @@
 \alias{arrayIntersections}
 \title{Counts array of intersections of Cis-regulatory elements (CRE)}
 \usage{
-arrayIntersections( list of params )
+arrayIntersections(arrayData= "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", massTF = 30000, powerNR = 50, tableNormal = TRUE)
 }
 \arguments{
 \item{arrayData}{Array of MACS-peaks in .bed or .RData format. Default folder is "~/tmp/RData/Output".}

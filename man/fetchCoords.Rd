@@ -4,7 +4,8 @@
 \alias{fetchCoords}
 \title{Search by address}
 \usage{
-fetchCoords(list of params)
+fetchCoords(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in")
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

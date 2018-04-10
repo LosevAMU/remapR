@@ -7,7 +7,8 @@
 #'
 #' @return Data.Frame from the listing-file.
 #'
-#' @usage loadFromUrlToTmp(url.in, tmp.to)
+#' @usage loadFromUrlToTmp(url.in="http://tagc.univ-mrs.fr/remap/download/remapR",
+#' tmp.to="remapR.csv")
 #'
 #' @examples
 #' myFrame <- loadFromUrlToTmp("http://tagc.univ-mrs.fr/remap/download/remapR", "remapR.csv")

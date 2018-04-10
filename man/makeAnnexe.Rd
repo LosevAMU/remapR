@@ -4,7 +4,7 @@
 \alias{makeAnnexe}
 \title{Counts MACS-peaks on chromosome}
 \usage{
-makeAnnexe(dirFrom)
+makeAnnexe(dirFrom="")
 }
 \arguments{
 \item{dirFrom}{The path to output annexe-file. By default "~/tmp/RData/Output".}

@@ -7,7 +7,7 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchIDFiles(dirFrom, ID)
+#' @usage fetchIDFiles(dirFrom = "", ID = "GSE56086")
 #'
 #' @examples
 #' myFrame <- fetchIDFiles(dirFrom = "", ID = "GSE56086")
@@ -19,8 +19,8 @@ fetchIDFiles <- function(dirFrom = "", ID = "GSE56086") {
   }
 
   arrayChrom <- gsub(pattern = ".RData", replacement = "", x = grep("^chr", list.files(dirFrom), value = TRUE))
-  arrayChromTMP <- c("chr20", "chrY")
-  genomeLen <- length(arrayChrom)
+  # arrayChromTMP <- c("chr20", "chrY")
+  # genomeLen <- length(arrayChrom)
 
   # arrayChrom <- arrayChromTMP
 

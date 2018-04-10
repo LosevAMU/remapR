@@ -13,7 +13,8 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks in this address.
 #'
-#' @usage fetchCoords(list of params)
+#' @usage fetchCoordsDFrame(dataFrame = "", nameChromosome = "chr21", begin = 605400, end = 629900,
+#' firstCut = "in", secondCut = "in")
 #'
 #' @examples
 #' myFrame <- fetchCoordsDFrame(dataFrame = "", nameChromosome = "chr21", begin = 605400,

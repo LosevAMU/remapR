@@ -4,7 +4,7 @@
 \alias{makeRandomSet}
 \title{Constructor of random set}
 \usage{
-makeRandomSet(dirFrom, dirTo, pourcentage)
+makeRandomSet(dirFrom = "", dirTo = "", pourcentage = 0.0125)
 }
 \arguments{
 \item{dirFrom}{The path to input files. By default "~/tmp/RData/Output".}

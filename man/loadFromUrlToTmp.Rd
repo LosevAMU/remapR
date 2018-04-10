@@ -4,7 +4,8 @@
 \alias{loadFromUrlToTmp}
 \title{Loads file of listing remapR from URL to ~/tmp}
 \usage{
-loadFromUrlToTmp(url.in, tmp.to)
+loadFromUrlToTmp(url.in="http://tagc.univ-mrs.fr/remap/download/remapR",
+tmp.to="remapR.csv")
 }
 \arguments{
 \item{url.in}{The path to a listing-file.}

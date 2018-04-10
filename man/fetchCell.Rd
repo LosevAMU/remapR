@@ -4,7 +4,7 @@
 \alias{fetchCell}
 \title{Select cell line}
 \usage{
-fetchCell(arrayData, cell)
+fetchCell(arrayData = "", cell = "vcap_shctr_r1881")
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

@@ -4,7 +4,7 @@
 \alias{fetchCellFiles}
 \title{Select cell line}
 \usage{
-fetchCellFiles(dirFrom, cell)
+fetchCellFiles(dirFrom="", cell="vcap_shctr_r1881")
 }
 \arguments{
 \item{dirFrom}{Path to data, by default "~/tmp/RData/Output".}

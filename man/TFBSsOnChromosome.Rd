@@ -4,7 +4,8 @@
 \alias{TFBSsOnChromosome}
 \title{CREs for given list of TFs}
 \usage{
-TFBSsOnChromosome(list of params)
+TFBSsOnChromosome(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", massTF = 10000, powerNR = 20)
 }
 \arguments{
 \item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}

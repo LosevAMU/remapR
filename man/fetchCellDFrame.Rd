@@ -4,12 +4,12 @@
 \alias{fetchCellDFrame}
 \title{Select cell line}
 \usage{
-fetchCellDFrame(dataFrame, cell)
+fetchCellDFrame(dataFrame="", cell="vcap_shctr_r1881")
 }
 \arguments{
-\item{cell}{Name of line.}
+\item{dataFrame}{Data frame.}
 
-\item{arrayData}{Data frame.}
+\item{cell}{Name of line.}
 }
 \value{
 Data Frame (class = "data.frame") of peaks of this line.

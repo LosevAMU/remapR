@@ -4,12 +4,12 @@
 \alias{fetchIDDFrame}
 \title{Select ID}
 \usage{
-fetchIDDFrame(dataFrame, ID)
+fetchIDDFrame(dataFrame = "", ID = "GSE56086")
 }
 \arguments{
-\item{ID}{Name of ID.}
+\item{dataFrame}{Data frame.}
 
-\item{arrayData}{Data frame.}
+\item{ID}{Name of ID.}
 }
 \value{
 Data Frame (class = "data.frame") of peaks of this line.

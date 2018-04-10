@@ -4,7 +4,7 @@
 \alias{divideByChromosome}
 \title{Devides by chromosomes}
 \usage{
-divideByChromosome(dirTo)
+divideByChromosome(dirTo="")
 }
 \arguments{
 \item{dirTo}{The path to output files. By default "~/tmp/RData/Output".}

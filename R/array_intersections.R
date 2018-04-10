@@ -18,7 +18,8 @@
 #'
 #' @return The square table of intersection of the CREs.
 #'
-#' @usage arrayIntersections( list of params )
+#' @usage arrayIntersections(arrayData= "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = 30000, powerNR = 50, tableNormal = TRUE)
 #'
 #' @examples
 #' array <- arrayIntersections(arrayData = "", nameChromosome = "chr21",
@@ -32,8 +33,8 @@ arrayIntersections <- function(arrayData = "",
                                end = "",
                                firstCut = "in",
                                secondCut = "in",
-                               massTF = 10000,
-                               powerNR = 10,
+                               massTF = 30000,
+                               powerNR = 50,
                                tableNormal = TRUE) {
 
   tmpTot <- remapR::TFBSsOnChromosome(arrayData = arrayData,
@@ -53,14 +54,15 @@ arrayIntersections <- function(arrayData = "",
   TFs <- unique(tmpTot$TF)
   myLen <- length(TFs)
 
-  my.array <- array(0, dim=c(myLen, myLen))
-  my.array.norm <- array(0, dim=c(myLen, myLen))
+  my.array <- array(0, dim = c(myLen, myLen))
+  my.array.norm <- array(0, dim = c(myLen, myLen))
   colnames(my.array) <- TFs
   rownames(my.array) <- TFs
   colnames(my.array.norm) <- TFs
   rownames(my.array.norm) <- TFs
 
-  library(IRanges)
+  # library(IRanges)
+  # message("apres les comment library")
 
   i <- 1
   for (i in seq(from = 1, to = myLen)) {
@@ -73,7 +75,7 @@ arrayIntersections <- function(arrayData = "",
       myIR2 <- remapR::DFrameToIRange(arrayData = tmpTot[tmpTot$TF == TFs[j], ])
       overLaps <- IRanges::findOverlaps(myIR1, myIR2)
       # length(unique(subjectHits(overLaps)))
-      my.array[i, j] <- length(unique(queryHits(overLaps)))
+      my.array[i, j] <- length(unique(S4Vectors::queryHits(overLaps)))
     }
   }
 
@@ -97,6 +99,5 @@ arrayIntersections <- function(arrayData = "",
   # dirFrom <- path.expand("~/tmp/RData/Output")
   # pnr <- 10
   # fileNameOut <- paste(dirFrom, "/TFBSs_ordone", pnr, ".bed", sep = "")
-  # write.table(tmpOrdone, fileNameOut, sep="\t", row.names=FALSE, quote = FALSE)
 
 }

@@ -4,7 +4,7 @@
 \alias{makeSummarySeries}
 \title{Counts some total information}
 \usage{
-makeSummarySeries(dirFrom)
+makeSummarySeries(dirFrom="")
 }
 \arguments{
 \item{dirFrom}{The path to output file. By default "~/tmp/RData/Output".}

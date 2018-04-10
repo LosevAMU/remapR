@@ -6,7 +6,7 @@
 #'
 #' @return In case of success it returns the word "Done".
 #'
-#' @usage bedToRData(dirFrom)
+#' @usage bedToRData(dirFrom="")
 #'
 #' @examples
 #' bedToRData(dirFrom="")
@@ -24,7 +24,7 @@ bedToRData <- function(dirFrom="") {
     fileNameInput <- i
     fileNameOutput <- paste(i, ".RData", sep = "")
     dirInput <- dirFrom
-    dirOutput <- dirTo
+    # dirOutput <- dirTo
     myFileInput <- file.path(dirInput, fileNameInput)
     myFileOutput <- file.path(dirInput, fileNameOutput)
 

@@ -4,7 +4,7 @@
 \alias{fetchIDFiles}
 \title{Select ID}
 \usage{
-fetchIDFiles(dirFrom, ID)
+fetchIDFiles(dirFrom = "", ID = "GSE56086")
 }
 \arguments{
 \item{dirFrom}{Path to data, by default "~/tmp/RData/Output".}

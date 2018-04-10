@@ -7,7 +7,7 @@
 #'
 #' @return The data in IRange format.
 #'
-#' @usage DFrameToIRange(arrayData)
+#' @usage DFrameToIRange(arrayData = "")
 #'
 #' @examples
 #' myIRange  <- DFrameToIRange(data.frame)

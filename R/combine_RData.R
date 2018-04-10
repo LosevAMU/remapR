@@ -7,7 +7,7 @@
 #'
 #' @return In case of success it returns the word "Done".
 #'
-#' @usage combineRData(dirFrom, dirTo)
+#' @usage combineRData(dirFrom="", dirTo="")
 #'
 #' @examples bedToRData(dirFrom="", dirTo="")
 #'

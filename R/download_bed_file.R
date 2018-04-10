@@ -12,7 +12,8 @@
 #'
 #' @return The path to the downloaded file.
 #'
-#' @usage downloadBedFile(list of params)
+#' @usage downloadBedFile(targetDir = "", version = "2018", species = "Homo sapiens",
+#'  assembly = "hg38", type = "Test peaks", force = FALSE)
 #'
 #' @examples
 #' downloadBedFile(targetDir = "", version = "2018", species = "Homo sapiens",

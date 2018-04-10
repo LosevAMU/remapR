@@ -7,7 +7,7 @@
 #' @return Table of quantity of sum of peaks, TFs and cellular lines for all IDs.
 #' In case of success it returns the word "Done".
 #'
-#' @usage makeSummarySeries(dirFrom)
+#' @usage makeSummarySeries(dirFrom="")
 #'
 #' @examples
 #' makeSummarySeries(dirFrom="")
@@ -17,7 +17,7 @@ makeSummarySeries <- function(dirFrom="") {
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")
   }
-  dirTo <- dirFrom
+  # dirTo <- dirFrom
 
   arrayChrom <- gsub(pattern = ".RData", replacement = "", x = grep("^chr", list.files(dirFrom), value = TRUE))
   # arrayChromTMP <- c("chr20", "chrY")
@@ -49,7 +49,7 @@ makeSummarySeries <- function(dirFrom="") {
     rm(list = c("chr"))
     listSeries <- unique(frameTmp$ID)
     # j <- listSeries[1]
-    totSer <- length(listSeries)
+    # totSer <- length(listSeries)
     summaryTmp <- data.frame()
     for (j in listSeries) {
       # message(ind_k, ' from ', totSer)

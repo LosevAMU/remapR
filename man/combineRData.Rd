@@ -4,7 +4,7 @@
 \alias{combineRData}
 \title{Combines a lot of files .RData in one file}
 \usage{
-combineRData(dirFrom, dirTo)
+combineRData(dirFrom="", dirTo="")
 }
 \arguments{
 \item{dirFrom}{The path to input files. By default "~/tmp/RData/Input".}

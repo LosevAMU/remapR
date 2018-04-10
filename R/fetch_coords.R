@@ -13,7 +13,8 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks in this address.
 #'
-#' @usage fetchCoords(list of params)
+#' @usage fetchCoords(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in")
 #'
 #' @examples
 #' myFrame <- fetchCoords(arrayData = "", nameChromosome = "chr21", begin = "",
@@ -27,7 +28,7 @@ fetchCoords <- function(arrayData = "",
                         firstCut = "in",
                         secondCut = "in") {
   if (class(arrayData) == "character") {
-    return(fetchCoordsFiles(dirFrom = arrayData,
+    return(remapR::fetchCoordsFiles(dirFrom = arrayData,
                             nameChromosome = nameChromosome,
                             begin = begin,
                             end = end,
@@ -35,7 +36,7 @@ fetchCoords <- function(arrayData = "",
                             secondCut = secondCut))
   }
   if (class(arrayData) == "data.frame") {
-    return(fetchCoordsDFrame(dataFrame = arrayData,
+    return(remapR::fetchCoordsDFrame(dataFrame = arrayData,
                              nameChromosome = nameChromosome,
                              begin = begin,
                              end = end,

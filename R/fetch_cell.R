@@ -7,7 +7,7 @@
 #'
 #' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage fetchCell(arrayData, cell)
+#' @usage fetchCell(arrayData = "", cell = "vcap_shctr_r1881")
 #'
 #' @examples
 #' myFrame <- fetchCell(arrayData = "", cell = "vcap_shctr_r1881")
@@ -15,10 +15,10 @@
 #' @export
 fetchCell <- function(arrayData = "", cell = "vcap_shctr_r1881") {
   if (class(arrayData) == "character") {
-    return(fetchCellFiles(dirFrom=arrayData, cell=cell))
+    return(remapR::fetchCellFiles(dirFrom=arrayData, cell=cell))
   }
   if (class(arrayData) == "data.frame") {
-    return(fetchCellDFrame(dataFrame=arrayData, cell=cell))
+    return(remapR::fetchCellDFrame(dataFrame=arrayData, cell=cell))
   }
   print("I cannot return any values because you use wrong arrayData")
   return("I cannot return any values because you use wrong arrayData")
