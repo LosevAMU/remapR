@@ -2,21 +2,25 @@
 % Please edit documentation in R/make_random_set.R
 \name{makeRandomSet}
 \alias{makeRandomSet}
-\title{Load chromosomes sizes file}
+\title{Constructor of random set}
 \usage{
-loadChromFile <- function(genome)
+makeRandomSet(dirFrom, dirTo, pourcentage)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirFrom}{The path to input files. By default "~/tmp/RData/Output".}
+
+\item{dirTo}{The path to output file. By default "~/tmp/RData/Output/Random data".}
+
+\item{pourcentage}{Size of random set in percent of original size.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+Function constructs a random set of MACS-peaks.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+makeRandomSet(dirFrom = "", dirTo = "", pourcentage = 0.0125)
 
 }
 \author{

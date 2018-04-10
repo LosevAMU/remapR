@@ -2,21 +2,16 @@
 % Please edit documentation in R/plot_range.R
 \name{plotRange}
 \alias{plotRange}
-\title{Load chromosomes sizes file}
+\title{Test unused function}
 \usage{
-loadChromFile <- function(genome)
-}
-\arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
-}
-\value{
-The path to a file that contains the chromosome lengths.
+plotRange(x, xlim = x, main = deparse(substitute(x)), col = "black",
+  sep = 0.5, ...)
 }
 \description{
-Load preloaded chromosome sizes files.
+Function plots IRange.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+hg19ChromFile(x = IRagne)
 
 }
 \author{

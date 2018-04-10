@@ -1,15 +1,9 @@
-#' @title Load chromosomes sizes file
+#' @title Test unused function
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
-#'
-#' @param genome The name of the species to import the chromosomes from.
-#'
-#' @return The path to a file that contains the chromosome lengths.
-#'
-#' @usage loadChromFile <- function(genome)
+#' @description Function plots IRange.
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' hg19ChromFile(x = IRagne)
 #'
 #' @export
 plotRange <- function(x, xlim = x, main = deparse(substitute(x)),

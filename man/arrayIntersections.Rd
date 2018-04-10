@@ -31,10 +31,10 @@ arrayIntersections( list of params )
 The square table of intersection of the CREs.
 }
 \description{
-For every TF the function counts how many TFs can be found on CRE of given TF.
+For every TF the function counts how many other TFs can be found on CRE of given TF.
 }
 \examples{
-array <- arrayIntersections <- function(arrayData = "", nameChromosome = "chr21",
+array <- arrayIntersections(arrayData = "", nameChromosome = "chr21",
 begin = "", end = "", firstCut = "in", secondCut = "in", massTF = 10000,
 powerNR = 10, tableNormal = TRUE)
 

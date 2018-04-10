@@ -2,21 +2,21 @@
 % Please edit documentation in R/make_annexe.R
 \name{makeAnnexe}
 \alias{makeAnnexe}
-\title{Load chromosomes sizes file}
+\title{Counts MACS-peaks on chromosome}
 \usage{
-loadChromFile <- function(genome)
+makeAnnexe(dirFrom)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirFrom}{The path to output annexe-file. By default "~/tmp/RData/Output".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Table of quantity of MACS-peaks on chromosome. In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+Function counts MACS-peaks on chromosome.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+makeAnnexe(dirFrom="")
 
 }
 \author{

@@ -1,20 +1,21 @@
-#' @title Load chromosomes sizes file
+#' @title How many regions contain the factor
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function counts the quantity of regions where TF can be found.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data from one of Fetches.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return The sorted list of TFs and the quantity of regions.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage frequencyTF(arrayData)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myList <- frequencyTF(arrayData = "")
 #'
 #' @export
-frequencyTF <- function(arrayData = ""){
+frequencyTF <- function(arrayData = data.frame){
 
   # arrayData <- remapR::fetchCoords()
+  # arrayData <- arrBrut
 
   listTF <- unique(arrayData$TF)
 
@@ -29,6 +30,7 @@ frequencyTF <- function(arrayData = ""){
   howManySites <- data.frame(TF = listTF, Freq = vecTF, stringsAsFactors = FALSE)
   howManySitesSort <- howManySites[order(howManySites$Freq, decreasing = TRUE), ]
   # str(howManySitesSort)
+  # head(howManySitesSort)
 
   return(howManySitesSort)
 }

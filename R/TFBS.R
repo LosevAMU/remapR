@@ -1,24 +1,34 @@
-#' @title Load chromosomes sizes file
+#' @title CREs for given TF
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function searches the CREs for given TF in region.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data or path to data, by default "~/tmp/RData/Output".
+#' @param nameChromosome Name of chromosome.
+#' @param begin Position of starting of searching on chromosome.
+#' @param end Position of ending of searching on chromosome.
+#' @param firstCut Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+#' "out" means that begin of MACS-peak can be only after param "begin".
+#' @param secondCut Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+#' "out" means that end of MACS-peak can be only before param "end".
+#' @param TF Name of TF.
+#' @param powerNR Minimal needed quantity of MACS-peaks to choose CRE.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of set of CREs.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage TFBS(list of params)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- TFBS(arrayData = "", nameChromosome = "chr21", begin = 5240000, end = 52450000,
+#' firstCut = "in", secondCut = "in", TF = "AR", powerNR = 3)
 #'
 #' @export
 TFBS <- function(arrayData = "",
                  nameChromosome = "chr21",
                  begin = 5240000,
-                 end = 5245000,
+                 end = 52450000,
                  firstCut = "in",
                  secondCut = "in",
-                 TF = "MAX",
+                 TF = "AR",
                  powerNR = 3){
 
   arrayPower <- remapR:::powerPeaksNR(arrayData = arrayData,

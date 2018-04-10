@@ -2,21 +2,22 @@
 % Please edit documentation in R/make_summary_series.R
 \name{makeSummarySeries}
 \alias{makeSummarySeries}
-\title{Load chromosomes sizes file}
+\title{Counts some total information}
 \usage{
-loadChromFile <- function(genome)
+makeSummarySeries(dirFrom)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirFrom}{The path to output file. By default "~/tmp/RData/Output".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Table of quantity of sum of peaks, TFs and cellular lines for all IDs.
+In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+Function counts sum of peaks, TFs and cellular lines for all IDs.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+makeSummarySeries(dirFrom="")
 
 }
 \author{

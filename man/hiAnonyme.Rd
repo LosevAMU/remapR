@@ -2,7 +2,7 @@
 % Please edit documentation in R/hi_anonyme.R
 \name{hiAnonyme}
 \alias{hiAnonyme}
-\title{Help start conversations}
+\title{Verification of loading of package}
 \usage{
 hiAnonyme(who)
 }
@@ -14,10 +14,13 @@ conversation with.}
 A line of text to be used when starting conversations.
 }
 \description{
-This function generates some helpful text that can be used to start
+Help start conversations. This function generates some helpful text that can be used to start
 conversations in all kinds of awkward social situations.
 }
 \examples{
-hi("Martin Morgan")
+hi("Alexey Solovyev")
 
+}
+\author{
+Alexey Solovyev
 }

@@ -2,21 +2,36 @@
 % Please edit documentation in R/power_peaks_NR.R
 \name{powerPeaksNR}
 \alias{powerPeaksNR}
-\title{Load chromosomes sizes file}
+\title{How many MACS-peaks are in region for given TF}
 \usage{
-loadChromFile <- function(genome)
+powerPeaksNR(list of params)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}
+
+\item{nameChromosome}{Name of chromosome.}
+
+\item{begin}{Position of starting of searching on chromosome.}
+
+\item{end}{Position of ending of searching on chromosome.}
+
+\item{firstCut}{Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+"out" means that begin of MACS-peak can be only after param "begin".}
+
+\item{secondCut}{Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+"out" means that end of MACS-peak can be only before param "end".}
+
+\item{TF}{Name of TF.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of quantity of peaks in this address.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function counts quantity of peaks of given TF in region.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- powerPeaksNR(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+firstCut = "in", secondCut = "in", TF="AR")
 
 }
 \author{

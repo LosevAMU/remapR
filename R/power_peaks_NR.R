@@ -1,15 +1,24 @@
-#' @title Load chromosomes sizes file
+#' @title How many MACS-peaks are in region for given TF
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function counts quantity of peaks of given TF in region.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data or path to data, by default "~/tmp/RData/Output".
+#' @param nameChromosome Name of chromosome.
+#' @param begin Position of starting of searching on chromosome.
+#' @param end Position of ending of searching on chromosome.
+#' @param firstCut Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+#' "out" means that begin of MACS-peak can be only after param "begin".
+#' @param secondCut Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+#' "out" means that end of MACS-peak can be only before param "end".
+#' @param TF Name of TF.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of quantity of peaks in this address.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage powerPeaksNR(list of params)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- powerPeaksNR(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", TF="AR")
 #'
 #' @export
 powerPeaksNR <- function(arrayData = "",
@@ -101,5 +110,6 @@ powerPeaksNR <- function(arrayData = "",
                          End=IRanges::end(myIR),
                          TF,
                          Redondance=redondance)
+  # head(frameRep)
   return(frameRep)
 }

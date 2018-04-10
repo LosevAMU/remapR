@@ -1,15 +1,28 @@
-#' @title Load chromosomes sizes file
+#' @title CREs for given list of TFs
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function searches the CREs for given TFs in region.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data or path to data, by default "~/tmp/RData/Output".
+#' @param nameChromosome Name of chromosome.
+#' @param begin Position of starting of searching on chromosome.
+#' @param end Position of ending of searching on chromosome.
+#' @param firstCut Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+#' "out" means that begin of MACS-peak can be only after param "begin".
+#' @param secondCut Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+#' "out" means that end of MACS-peak can be only before param "end".
+#' @param massTF List of TFs or quantity of MACS-peaks to choose CRE.
+#' @param powerNR Minimal needed quantity of MACS-peaks to choose CRE.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of set of CREs.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage TFBSsOnChromosome(list of params)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- TFBSsOnChromosome(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = 10000, powerNR = 20)
+#'
+#' myFrame <- TFBSsOnChromosome(arrayData = "", nameChromosome = "chr21", begin = "", end = "",
+#' firstCut = "in", secondCut = "in", massTF = c("AR", "FOXA1"), powerNR = 10)
 #'
 #' @export
 TFBSsOnChromosome <- function(arrayData = "",

@@ -3,7 +3,7 @@
 #' @description This function converts DataFrame to IRange.
 #'
 #' @param arrayData The data to convert. Second column of arrayData is start of IRange,
-#' third column of arrayData is end of IRange.
+#' third column of arrayData is end of IRange. For exemple, Data from one of Fetches.
 #'
 #' @return The data in IRange format.
 #'

@@ -1,6 +1,6 @@
 #' @title Counts array of intersections of Cis-regulatory elements (CRE)
 #' @author Alexey Solovyev
-#' @description For every TF the function counts how many TFs can be found on CRE of given TF.
+#' @description For every TF the function counts how many other TFs can be found on CRE of given TF.
 #'
 #' @param arrayData Array of MACS-peaks in .bed or .RData format. Default folder is "~/tmp/RData/Output".
 #' @param nameChromosome Name of chromosome.
@@ -21,7 +21,7 @@
 #' @usage arrayIntersections( list of params )
 #'
 #' @examples
-#' array <- arrayIntersections <- function(arrayData = "", nameChromosome = "chr21",
+#' array <- arrayIntersections(arrayData = "", nameChromosome = "chr21",
 #' begin = "", end = "", firstCut = "in", secondCut = "in", massTF = 10000,
 #' powerNR = 10, tableNormal = TRUE)
 #'

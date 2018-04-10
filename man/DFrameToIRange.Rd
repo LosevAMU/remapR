@@ -8,7 +8,7 @@ DFrameToIRange(arrayData)
 }
 \arguments{
 \item{arrayData}{The data to convert. Second column of arrayData is start of IRange,
-third column of arrayData is end of IRange.}
+third column of arrayData is end of IRange. For exemple, Data from one of Fetches.}
 }
 \value{
 The data in IRange format.

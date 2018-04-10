@@ -1,15 +1,15 @@
-#' @title Load chromosomes sizes file
+#' @title Counts MACS-peaks on chromosome
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function counts MACS-peaks on chromosome.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom The path to output annexe-file. By default "~/tmp/RData/Output".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Table of quantity of MACS-peaks on chromosome. In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage makeAnnexe(dirFrom)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' makeAnnexe(dirFrom="")
 #'
 #' @export
 makeAnnexe <- function(dirFrom="") {

@@ -1,15 +1,16 @@
-#' @title Load chromosomes sizes file
+#' @title Counts some total information
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function counts sum of peaks, TFs and cellular lines for all IDs.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom The path to output file. By default "~/tmp/RData/Output".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Table of quantity of sum of peaks, TFs and cellular lines for all IDs.
+#' In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage makeSummarySeries(dirFrom)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' makeSummarySeries(dirFrom="")
 #'
 #' @export
 makeSummarySeries <- function(dirFrom="") {

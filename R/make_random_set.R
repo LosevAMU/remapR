@@ -1,18 +1,20 @@
-#' @title Load chromosomes sizes file
+#' @title Constructor of random set
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function constructs a random set of MACS-peaks.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom The path to input files. By default "~/tmp/RData/Output".
+#' @param dirTo The path to output file. By default "~/tmp/RData/Output/Random data".
+#' @param pourcentage Size of random set in percent of original size.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage makeRandomSet(dirFrom, dirTo, pourcentage)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' makeRandomSet(dirFrom = "", dirTo = "", pourcentage = 0.0125)
 #'
 #' @export
-makeRandomSet <- function(dirFrom="", dirTo="", pourcentage=0.0125) {
+makeRandomSet <- function(dirFrom = "", dirTo = "", pourcentage = 0.0125) {
   if (dirFrom == "") {
     dirFrom <- path.expand("~/tmp/RData/Output")
   }

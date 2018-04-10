@@ -2,21 +2,21 @@
 % Please edit documentation in R/frequency_TF.R
 \name{frequencyTF}
 \alias{frequencyTF}
-\title{Load chromosomes sizes file}
+\title{How many regions contain the factor}
 \usage{
-loadChromFile <- function(genome)
+frequencyTF(arrayData)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{Data from one of Fetches.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+The sorted list of TFs and the quantity of regions.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function counts the quantity of regions where TF can be found.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myList <- frequencyTF(arrayData = "")
 
 }
 \author{
