@@ -1,15 +1,23 @@
-#' @title Load chromosomes sizes file
+#' @title Search by address
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function selects in given address.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom Path to data, by default "~/tmp/RData/Output".
+#' @param nameChromosome Name of chromosome.
+#' @param begin Position of starting of searching on chromosome.
+#' @param end Position of ending of searching on chromosome.
+#' @param firstCut Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+#' "out" means that begin of MACS-peak can be only after param "begin".
+#' @param secondCut Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+#' "out" means that end of MACS-peak can be only before param "end".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of peaks in this address.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage fetchCoords(list of params)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- fetchCoords(dirFrom = "", nameChromosome = "chr21", begin = "",
+#' end = "", firstCut = "in", secondCut = "in")
 #'
 #' @export
 fetchCoordsFiles <- function(dirFrom = "",

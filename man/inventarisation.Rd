@@ -2,38 +2,33 @@
 % Please edit documentation in R/inventarisation.R
 \name{inventarisation}
 \alias{inventarisation}
-\title{Download Remap catalogue}
+\title{Path to choosen set}
 \usage{
-downloadRemapCatalog(targetDir, fileName = "",
-version = "2018", assembly = "hg38", force = FALSE, store = TRUE)
+inventarisation(list of params)
 }
 \arguments{
-\item{targetDir}{The name of the directory to download the catalogue in.}
+\item{mode_res}{Determines the type of answer, it can be
+'path', 'version', 'species', 'assembly' or 'type'.}
 
-\item{fileName=""}{The name of the file after downloading.
-If let empty, default url names will be applied.}
+\item{version}{Version of ReMap.}
 
-\item{version="2018"}{The year version of the catalog 2018 or 2015.}
+\item{species}{Name of specie.}
 
-\item{assembly="hg38"}{The  genomic version of assembly hg38 or hg19.}
+\item{assembly}{Number of assembly.}
 
-\item{force=FALSE}{If FALSE (default), then no file is overwrited and the
-user is given confirmation message.}
-
-\item{store=TRUE}{If TRUE (default) then a file is downloaded and written
-on the disk else it is only loaded as an R object.}
+\item{type}{Type of data.}
 }
 \value{
-A data frame containing the Remap genomic regions if store = FALSE
-else the path to the catalog file.
+Path to the chosen file.
 }
 \description{
-Download or import in a data frame the Remap catalogue for
- transcriptions factors.
+Function gives possibility to select the set of data.
 }
 \examples{
-remapFile <- inventarisation()
-remap <- inventarisation(mode=version)
+remapFile <- inventarisation(mode_res = "path", version = "2018",
+species = "Homo sapiens", assembly = "hg38", type = "All peaks")
+
+which_version <- inventarisation(mode = "version")
 
 }
 \author{

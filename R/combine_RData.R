@@ -1,15 +1,15 @@
-#' @title Load chromosomes sizes file
+#' @title Combines a lot of files .RData in one file
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Combines a lot of files .RData in one file.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom The path to input files. By default "~/tmp/RData/Input".
+#' @param dirTo The path to output file. By default "~/tmp/RData/Output".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage combineRData(dirFrom, dirTo)
 #'
-#' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' @examples bedToRData(dirFrom="", dirTo="")
 #'
 #' @export
 combineRData <- function(dirFrom="", dirTo="") {

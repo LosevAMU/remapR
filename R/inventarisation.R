@@ -1,35 +1,31 @@
-#' @title Download Remap catalogue
+#' @title Path to choosen set
 #' @author Alexey Solovyev
-#' @description Download or import in a data frame the Remap catalogue for
-#'  transcriptions factors.
+#' @description Function gives possibility to select the set of data.
 #'
+#' @param mode_res Determines the type of answer, it can be
+#' 'path', 'version', 'species', 'assembly' or 'type'.
 #'
-#' @param targetDir The name of the directory to download the catalogue in.
-#' @param fileName="" The name of the file after downloading.
-#' If let empty, default url names will be applied.
-#' @param version="2018" The year version of the catalog 2018 or 2015.
-#' @param assembly="hg38" The  genomic version of assembly hg38 or hg19.
-#' @param force=FALSE If FALSE (default), then no file is overwrited and the
-#' user is given confirmation message.
-#' @param store=TRUE If TRUE (default) then a file is downloaded and written
-#' on the disk else it is only loaded as an R object.
+#' @param version Version of ReMap.
+#' @param species Name of specie.
+#' @param assembly Number of assembly.
+#' @param type Type of data.
 #'
-#' @return A data frame containing the Remap genomic regions if store = FALSE
-#' else the path to the catalog file.
+#' @return Path to the chosen file.
 #'
-#' @usage downloadRemapCatalog(targetDir, fileName = "",
-#' version = "2018", assembly = "hg38", force = FALSE, store = TRUE)
+#' @usage inventarisation(list of params)
 #'
 #' @examples
-#' remapFile <- inventarisation()
-#' remap <- inventarisation(mode=version)
+#' remapFile <- inventarisation(mode_res = "path", version = "2018",
+#' species = "Homo sapiens", assembly = "hg38", type = "All peaks")
+#'
+#' which_version <- inventarisation(mode = "version")
 #'
 #' @export
-inventarisation <- function(mode_res="",
-                            version="",
-                            species="",
-                            assembly="",
-                            type="") {
+inventarisation <- function(mode_res = "",
+                            version = "",
+                            species = "",
+                            assembly = "",
+                            type = "") {
 
 
   # from

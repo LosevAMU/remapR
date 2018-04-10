@@ -1,18 +1,19 @@
-#' @title Load chromosomes sizes file
+#' @title Select TF
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function selects given TF.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data frame.
+#' @param TF Name of TF.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage fetchTFDFrame(dataFrame, TF)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- fetchTFDFrame(dataFrame = "", TF = "FOXA1")
 #'
 #' @export
-fetchTFDFrame <- function(dataFrame="", TF="foxa1") {
+fetchTFDFrame <- function(dataFrame = "", TF = "FOXA1") {
 
   if (class(dataFrame) == "data.frame") {
     return(dataFrame[which(dataFrame$TF == TF), ])

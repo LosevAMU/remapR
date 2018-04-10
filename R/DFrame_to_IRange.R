@@ -1,15 +1,16 @@
-#' @title Load chromosomes sizes file
+#' @title DataFrame to IRange
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description This function converts DataFrame to IRange.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData The data to convert. Second column of arrayData is start of IRange,
+#' third column of arrayData is end of IRange.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return The data in IRange format.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage DFrameToIRange(arrayData)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myIRange  <- DFrameToIRange(data.frame)
 #'
 #' @export
 DFrameToIRange <- function(arrayData = "") {

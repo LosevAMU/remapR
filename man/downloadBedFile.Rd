@@ -2,21 +2,33 @@
 % Please edit documentation in R/download_bed_file.R
 \name{downloadBedFile}
 \alias{downloadBedFile}
-\title{Load file from URL to tmp}
+\title{Loads file from URL to tmp}
 \usage{
-loadChromFile <- function(genome)
+downloadBedFile(list of params)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{targetDir}{The name of the directory to download the file in, by default "~/tmp".}
+
+\item{version}{Version of ReMap.}
+
+\item{species}{Name of specie.}
+
+\item{assembly}{Number of assembly.}
+
+\item{type}{Type of data.}
+
+\item{force}{It can be FALSE or TRUE. If FALSE (default), then no file is overwrited and the
+user is given confirmation message.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+The path to the downloaded file.
 }
 \description{
-Load files.
+Function loads bed-files from URL to the given directory.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+downloadBedFile(targetDir = "", version = "2018", species = "Homo sapiens",
+assembly = "hg38", type = "Test peaks", force = FALSE)
 
 }
 \author{

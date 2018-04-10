@@ -2,21 +2,34 @@
 % Please edit documentation in R/fetch_coords_DFrame.R
 \name{fetchCoordsDFrame}
 \alias{fetchCoordsDFrame}
-\title{Load chromosomes sizes file}
+\title{Search by address}
 \usage{
-loadChromFile <- function(genome)
+fetchCoords(list of params)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dataFrame}{Data.}
+
+\item{nameChromosome}{Name of chromosome.}
+
+\item{begin}{Position of starting of searching on chromosome.}
+
+\item{end}{Position of ending of searching on chromosome.}
+
+\item{firstCut}{Can be "in" or "out". Condition of searching. "in" means that begin of MACS-peak can be before param "begin".
+"out" means that begin of MACS-peak can be only after param "begin".}
+
+\item{secondCut}{Can be "in" or "out". Condition of searching. "in" means that end of MACS-peak can be after param "end".
+"out" means that end of MACS-peak can be only before param "end".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of peaks in this address.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function selects in given address.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- fetchCoordsDFrame(dataFrame = "", nameChromosome = "chr21", begin = 605400,
+end = 6299000, firstCut = "in", secondCut = "in")
 
 }
 \author{

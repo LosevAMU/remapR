@@ -2,21 +2,22 @@
 % Please edit documentation in R/DFrame_to_IRange.R
 \name{DFrameToIRange}
 \alias{DFrameToIRange}
-\title{Load chromosomes sizes file}
+\title{DataFrame to IRange}
 \usage{
-loadChromFile <- function(genome)
+DFrameToIRange(arrayData)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{The data to convert. Second column of arrayData is start of IRange,
+third column of arrayData is end of IRange.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+The data in IRange format.
 }
 \description{
-Load preloaded chromosome sizes files.
+This function converts DataFrame to IRange.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myIRange  <- DFrameToIRange(data.frame)
 
 }
 \author{

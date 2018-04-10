@@ -1,6 +1,6 @@
 Package: remapR
 Title: Bioinformatic tools to transform ReMap-data in R
-Version: 1.0.0
+Version: 1.18.4
 Authors@R: person("Alexey", "Solovyev", email = "alexey.solovyev@etu.univ-amu.fr", role = c("aut", "cre"))
 Description: Bioinformatic tools to transform ReMap-data in R.
 Depends: R (>= 3.4.3)

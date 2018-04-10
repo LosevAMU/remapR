@@ -2,21 +2,23 @@
 % Please edit documentation in R/fetch_TF_DFrame.R
 \name{fetchTFDFrame}
 \alias{fetchTFDFrame}
-\title{Load chromosomes sizes file}
+\title{Select TF}
 \usage{
-loadChromFile <- function(genome)
+fetchTFDFrame(dataFrame, TF)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{TF}{Name of TF.}
+
+\item{arrayData}{Data frame.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of peaks of this line.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function selects given TF.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- fetchTFDFrame(dataFrame = "", TF = "FOXA1")
 
 }
 \author{

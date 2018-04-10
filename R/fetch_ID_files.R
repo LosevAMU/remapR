@@ -1,15 +1,16 @@
-#' @title Load chromosomes sizes file
+#' @title Select ID
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function selects given ID.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirFrom Path to data, by default "~/tmp/RData/Output".
+#' @param ID Name of ID.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage fetchIDFiles(dirFrom, ID)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- fetchIDFiles(dirFrom = "", ID = "GSE56086")
 #'
 #' @export
 fetchIDFiles <- function(dirFrom = "", ID = "GSE56086") {

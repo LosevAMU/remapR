@@ -2,21 +2,23 @@
 % Please edit documentation in R/fetch_cell.R
 \name{fetchCell}
 \alias{fetchCell}
-\title{Load chromosomes sizes file}
+\title{Select cell line}
 \usage{
-loadChromFile <- function(genome)
+fetchCell(arrayData, cell)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}
+
+\item{cell}{Name of line.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of peaks of this line.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function selects given cell line.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- fetchCell(arrayData = "", cell = "vcap_shctr_r1881")
 
 }
 \author{

@@ -1,15 +1,22 @@
-#' @title Load file from URL to tmp
+#' @title Loads file from URL to tmp
 #' @author Alexey Solovyev
-#' @description Load files.
+#' @description Function loads bed-files from URL to the given directory.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param targetDir The name of the directory to download the file in, by default "~/tmp".
+#' @param version Version of ReMap.
+#' @param species Name of specie.
+#' @param assembly Number of assembly.
+#' @param type Type of data.
+#' @param force It can be FALSE or TRUE. If FALSE (default), then no file is overwrited and the
+#' user is given confirmation message.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return The path to the downloaded file.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage downloadBedFile(list of params)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' downloadBedFile(targetDir = "", version = "2018", species = "Homo sapiens",
+#' assembly = "hg38", type = "Test peaks", force = FALSE)
 #'
 #' @export
 downloadBedFile <- function(targetDir = "",

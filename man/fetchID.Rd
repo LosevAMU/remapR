@@ -2,21 +2,23 @@
 % Please edit documentation in R/fetch_ID.R
 \name{fetchID}
 \alias{fetchID}
-\title{Load chromosomes sizes file}
+\title{Select ID}
 \usage{
-loadChromFile <- function(genome)
+fetchID(arrayData, ID)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{arrayData}{Data or path to data, by default "~/tmp/RData/Output".}
+
+\item{ID}{Name of line.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of peaks of this line.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function selects given ID.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- fetchID(arrayData = "", ID = "GSE56086")
 
 }
 \author{

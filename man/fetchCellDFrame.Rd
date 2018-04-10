@@ -2,21 +2,23 @@
 % Please edit documentation in R/fetch_cell_DFrame.R
 \name{fetchCellDFrame}
 \alias{fetchCellDFrame}
-\title{Load chromosomes sizes file}
+\title{Select cell line}
 \usage{
-loadChromFile <- function(genome)
+fetchCellDFrame(dataFrame, cell)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{cell}{Name of line.}
+
+\item{arrayData}{Data frame.}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+Data Frame (class = "data.frame") of peaks of this line.
 }
 \description{
-Load preloaded chromosome sizes files.
+Function selects given cell line.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+myFrame <- fetchCellDFrame(dataFrame = "", cell = "vcap_shctr_r1881")
 
 }
 \author{

@@ -2,21 +2,23 @@
 % Please edit documentation in R/combine_RData.R
 \name{combineRData}
 \alias{combineRData}
-\title{Load chromosomes sizes file}
+\title{Combines a lot of files .RData in one file}
 \usage{
-loadChromFile <- function(genome)
+combineRData(dirFrom, dirTo)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirFrom}{The path to input files. By default "~/tmp/RData/Input".}
+
+\item{dirTo}{The path to output file. By default "~/tmp/RData/Output".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+Combines a lot of files .RData in one file.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+bedToRData(dirFrom="", dirTo="")
 
 }
 \author{

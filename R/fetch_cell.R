@@ -1,18 +1,19 @@
-#' @title Load chromosomes sizes file
+#' @title Select cell line
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function selects given cell line.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param arrayData Data or path to data, by default "~/tmp/RData/Output".
+#' @param cell Name of line.
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return Data Frame (class = "data.frame") of peaks of this line.
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage fetchCell(arrayData, cell)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' myFrame <- fetchCell(arrayData = "", cell = "vcap_shctr_r1881")
 #'
 #' @export
-fetchCell <- function(arrayData="", cell="vcap_shctr_r1881") {
+fetchCell <- function(arrayData = "", cell = "vcap_shctr_r1881") {
   if (class(arrayData) == "character") {
     return(fetchCellFiles(dirFrom=arrayData, cell=cell))
   }

@@ -1,34 +1,34 @@
-#' @title Load chromosomes sizes file
+#' @title Devides by chromosomes
 #' @author Alexey Solovyev
-#' @description Load preloaded chromosome sizes files.
+#' @description Function devides given file into set of files by name of chromosome.
 #'
-#' @param genome The name of the species to import the chromosomes from.
+#' @param dirTo The path to output files. By default "~/tmp/RData/Output".
 #'
-#' @return The path to a file that contains the chromosome lengths.
+#' @return In case of success it returns the word "Done".
 #'
-#' @usage loadChromFile <- function(genome)
+#' @usage divideByChromosome(dirTo)
 #'
 #' @examples
-#' hg19ChromFile <- loadChromFile("hg19")
+#' divideByChromosome(dirTo="")
 #'
 #' @export
-divideByChromosome <- function(dirFrom="", dirTo="") {
+divideByChromosome <- function(dirTo="") {
   totFrame <- data.frame()
 
-  if (dirFrom == "") {
-    dirFrom <- path.expand("~/tmp/RData/Output")
-  }
+  # if (dirFrom == "") {
+  #   dirFrom <- path.expand("~/tmp/RData/Output")
+  # }
   if (dirTo == "") {
     dirTo <- path.expand("~/tmp/RData/Output")
   }
   pathOpen <- file.choose()
-  # totFrame <- get(load(pathOpen))
-  load(pathOpen)
+  totFrame <- get(load(pathOpen))
 
 
   myChrom <- unique(totFrame$Chromosome)
   print(myChrom)
 
+  # i <- myChrom[1]
   for (i in myChrom) {
 
     print(i)
@@ -39,9 +39,6 @@ divideByChromosome <- function(dirFrom="", dirTo="") {
 
   }
   rm(totFrame)
-
-
-
   camelCaps <- "Done"
   return(camelCaps)
 }

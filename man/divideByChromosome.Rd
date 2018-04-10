@@ -2,21 +2,21 @@
 % Please edit documentation in R/divide_by_chromosome.R
 \name{divideByChromosome}
 \alias{divideByChromosome}
-\title{Load chromosomes sizes file}
+\title{Devides by chromosomes}
 \usage{
-loadChromFile <- function(genome)
+divideByChromosome(dirTo)
 }
 \arguments{
-\item{genome}{The name of the species to import the chromosomes from.}
+\item{dirTo}{The path to output files. By default "~/tmp/RData/Output".}
 }
 \value{
-The path to a file that contains the chromosome lengths.
+In case of success it returns the word "Done".
 }
 \description{
-Load preloaded chromosome sizes files.
+Function devides given file into set of files by name of chromosome.
 }
 \examples{
-hg19ChromFile <- loadChromFile("hg19")
+divideByChromosome(dirTo="")
 
 }
 \author{
